@@ -1,3 +1,41 @@
-h1 {
-  color: blue;
+/** Footer*/
+footer {
+    margin-left: 0;
+    margin-right:0;
+    margin-top: 60px;
+    background-color: darkgrey;
 }
+
+footer > div > ul > li > a {
+    color: black;
+}
+
+/** banner */
+h1, h2 {
+    text-align: center;
+    padding: 30px;
+}
+
+#titleBanner  {
+    background-color: #1d81ff;
+    color: whitesmoke;
+}
+
+/**project button */
+#homeProjectButton {
+    text-align: center;
+
+}
+
+#homeProjectButton >a {
+    font-size: 1.4em;
+    padding: 5%;
+    width: 25%;
+    height: 30vh;
+    margin: 3%;
+    border-radius: 100%;
+
+}
+
+
+
