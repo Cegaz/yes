@@ -37,5 +37,25 @@ h1, h2 {
 
 }
 
-
+/* show project */
+h3{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.grid-container{
+    margin-top: 2%;
+}
+.projectHolder{
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+}
+#threeProjects .columns{
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #BBB;
+}
+#threeProjects .thumbnail{
+    margin-top: 3%;
+}
 
