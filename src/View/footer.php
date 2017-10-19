@@ -13,7 +13,6 @@
     </div>
 </footer>
 
-
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
 <script src="/assets/js/script.js"></script>

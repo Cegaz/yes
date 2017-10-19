@@ -1,0 +1,58 @@
+{% extends 'home.html.twig' %}
+
+{% block content %}
+    <section id="threeProjects" class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="small-12 medium-4 columns">
+                <img class="thumbnail" src="assets/img/project1.jpeg" alt="project">
+                <!-- faire une boucle for twig pour afficher les 3 projets -->
+                <div>
+                    <h3>Le stylo numérique</h3>
+                    <p>Quod si rectum statuerimus vel concedere amicis, quidquid velint, vel impetrare ab iis, quidquid
+                        velimus, perfecta quidem sapientia si simus</p>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
+                         aria-valuetext="25 percent" aria-valuemax="100">
+                    <span class="progress-meter" style="width: 25%">
+                    <p class="progress-meter-text">25%</p></span>
+                    </div>
+                    <p class="text-right">2 500€ / 10 000 €</br>
+                        3j restants</p>
+                    <p>par bidulu {{ projectholder1 }}<img class="projectHolder" src="assets/img/projectholder.jpeg"></p>
+                </div>
+            </div>
+            <div class="small-12 medium-4 columns">
+                <a href="#" class="thumbnail"><img src="assets/img/project2.jpeg" alt="project"></a>
+                <div>
+                    <h3>Poulet basquaise</h3>
+                    <p>Quod si rectum statuerimus vel concedere amicis, quidquid velint, vel impetrare ab iis, quidquid
+                        velimus, perfecta quidem sapientia si simus</p>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0"
+                         aria-valuetext="50 percent" aria-valuemax="100">
+                    <span class="progress-meter" style="width: 50%">
+                    <p class="progress-meter-text">50%</p></span>
+                    </div>
+                    <p class="text-right">3 250€ / 7 500 €<br/>
+                        3j restants</p>
+                    <p>par poubooupvu {{ projectholder2 }}<img class="projectHolder" src="assets/img/projectholder.jpeg"></p>
+                </div>
+            </div>
+            <div class="small-12 medium-4 columns">
+                <img class="thumbnail" src="assets/img/project3.jpeg" alt="project">
+                <div>
+                    <h3>Les images sur le mur</h3>
+                    <p>Quod si rectum statuerimus vel concedere amicis, quidquid velint, vel impetrare ab iis, quidquid
+                        velimus, perfecta quidem sapientia si simus</p>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="100" aria-valuemin="0"
+                         aria-valuetext="100 percent" aria-valuemax="100">
+                    <span class="progress-meter" style="width: 100%">
+                    <p class="progress-meter-text">100%</p></span>
+                    </div>
+                    <p class="text-right">4 000 € / 4 000€<br/>
+                    3h restantes</p>
+                    <p>par gigi {{ projectholder3 }}<img class="projectHolder" src="assets/img/projectholder.jpeg"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
