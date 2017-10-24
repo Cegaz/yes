@@ -1,2 +1,2 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=ouiproject', 'root', 'bingo');
+$db = new PDO('mysql:host=localhost;dbname=ouiproject', 'root', 'root');
