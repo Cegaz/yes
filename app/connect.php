@@ -1,7 +1,2 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gilles
- * Date: 19/10/17
- * Time: 14:32
- */
+$db = new PDO('mysql:host=localhost;dbname=ouiProject', 'pinpin', 'alibi*12');
