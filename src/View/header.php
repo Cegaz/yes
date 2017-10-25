@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
     <title>Oui Project</title>
 </head>
 
@@ -28,37 +30,61 @@
         <div class="top-bar-right">
             <ul class="menu">
                 <li><input type="search" placeholder="Search"></li>
-                <li><a href="#openModal"><button type="button" class="button">Connexion</button></a></li>
+                <li><button type="button" class="button">Connexion</button></li>
 
-                <div id="openModal" class="modalDialog">
-                    <div>
-                        <a href="#close" title="Close" class="close">fermer</a>
-                        <div class="login-box">
-                            <div class="row collapse expanded">
-                                <div class="small-12 medium-6 column small-order-2 medium-order-1">
-                                    <div class="login-box-form-section">
-                                        <h1 class="login-box-title">Sign up</h1>
-                                        <form method="post" action="/signin">
-                                            <input class="login-box-input" type="text" required pattern="[a-zA-Z]+" name="pseudo"
-                                                   placeholder="pseudo" />
-                                            <input class="login-box-input" type="email" required pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}" name="email"
-                                                   placeholder="email" />
-                                            <input class="login-box-input" type="password" id="password" required
-                                                   pattern="[a-zA-Z]+" name="password" placeholder="mot de passe" />
 
-                                            <input class="login-box-input" type="password" required pattern="[a-zA-Z]+"
-                                                   data-equalto="password" name="password_conf" placeholder="confirmer votre mot
-                                       de passe"/>
-                                            <input class="login-box-submit-button" type="submit" name="submit"
-                                                   value="valider" />
-                                            <input type="checkbox" name="cgu" value="1" placeholder="veuillez accepter les cgu" />
-                                        </form>
-                                    </div>
-                                </div>
+        <div class="reveal" id="exampleModal1" data-reveal>
+            <form data-abide novalidate method="post" action="/signin">
+                <div data-abide-error class="alert callout" style="display: none;">
+                    <p><i class="fi-alert"></i>les informations entrées sont incorrects</p>
+                </div>
+                <div class="form-icons">
+                    <h4>inscription Oui-project</h4>
 
-                            </div>
-                        </div>
+                    <div class="input-group"><span class="input-group-label"><i class="fa fa-user"></i></span>
+                        <span class="form-error">pseudo requis</span>
+                        <input class="input-group-field" type="text" name="pseudo" placeholder="pseudo" required
+                               pattern="[a-zA-Z]+"/>
+
                     </div>
+
+                    <div class="input-group"><span class="input-group-label"><i class="fa fa-envelope"></i></span>
+                        <input class="input-group-field" type="password" name="email"
+                               required pattern="/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/"
+                               placeholder="email"/>
+                        <span class="form-error"> email requis</span>
+                    </div>
+
+                    <div class="input-group"><span class="input-group-label"><i class="fa fa-key"></i></span>
+                        <input class="input-group-field" required pattern="[a-zA-Z]+"
+                               type="password" name="mot de passe" placeholder="mot de passe"/>
+                        <span class="form-error"> mot de passe incorrect</span>
+                    </div>
+
+                    <div class="input-group"><span class="input-group-label"><i class="fa fa-key"></i></span>
+                        <input class="input-group-field" data-equalto="password" type="password" required name="mot
+                        de passe_conf" placeholder="confirmation mot de passe">
+                        <span class="form-error"> mot de passe incorrect</span>
+                    </div>
+
+                    <div class="input-group"><span class="input-group-label"><i class="fa fa-check"></i></span>
+                        <input class="input-group-field" type="checkbox" value="1" name="cgu"/>
+                        <p><a href="https://www.amazon.fr/gp/help/customer/display.html?nodeId=548524#GUID-602FA6E8-D724-4317-89F6-E78834F9BA58__SECTION_E43AAFC78C1543548F6B3D44AC4D5D20"
+                              target="_blank" >j'accepte les conditions générales d'utilisation</p></a>
+                        <span class="form-error">veuillez validez les conditions</span>
+                    </div>
+
+
+                </div>
+
+                <button class="button expanded">Valider</button>
+            </form>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <p><button class="button" data-open="exampleModal1">Inscription</button></p>
             </ul>
         </div>
     </div>
