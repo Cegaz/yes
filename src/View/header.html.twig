@@ -31,11 +31,13 @@
             <ul class="menu">
                 <li><input type="search" placeholder="Search"></li>
                 <li><button type="button" class="button">Connexion</button></li>
+                <li><button class="button" data-open="openModal">Inscription</button></li>
+            </ul>
 
-        <div class="reveal" id="exampleModal1" data-reveal>
+                <div class="reveal" id="openModal" data-reveal>
             <form data-abide novalidate method="post" action="/signin">
                 <div data-abide-error class="alert callout" style="display: none;">
-                    <p><i class="fi-alert"></i>les informations entrées sont incorrects</p>
+                    <p><i class="fi-alert"></i>les informations entrées sont incorrectes</p>
                 </div>
                 <div class="form-icons">
                     <h4>inscription Oui-project</h4>
@@ -47,21 +49,20 @@
                     </div>
 
                     <div class="input-group"><span class="input-group-label"><i class="fa fa-envelope"></i></span>
-                        <input class="input-group-field" type="password" name="email"
-                               required pattern="/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/"
+                        <input class="input-group-field" type="email" name="email"
+                               required pattern="^[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$"
                                placeholder="email"/>
                         <span class="form-error"> email requis</span>
                     </div>
 
                     <div class="input-group"><span class="input-group-label"><i class="fa fa-key"></i></span>
-                        <input class="input-group-field" required pattern="[a-zA-Z]+"
-                               type="password" name="mot de passe" placeholder="mot de passe"/>
-                        <span class="form-error"> mot de passe incorrect</span>
+                        <input class="input-group-field" required type="password" name="password"
+                               placeholder="mot de passe" id="password"/>
                     </div>
 
                     <div class="input-group"><span class="input-group-label"><i class="fa fa-key"></i></span>
-                        <input class="input-group-field" data-equalto="password" type="password" required name="mot
-                        de passe_conf" placeholder="confirmation mot de passe">
+                        <input class="input-group-field" data-equalto="password" type="password" required
+                               name="password_conf" placeholder="confirmation mot de passe">
                         <span class="form-error"> mot de passe incorrect</span>
                     </div>
 
@@ -79,13 +80,11 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <p><button class="button" data-open="exampleModal1">Inscription</button></p>
-            </ul>
         </div>
     </div>
     {% if error == true %}
-    <div class="callout alert">
-        <p>{{ message }}<a href="#openModal">  Se connecter</a></p>
+    <div class="callout warning">
+        <p><button class="button" data-open="openModal">{{ message }}</button></p>
     </div>
     {% endif %}
 

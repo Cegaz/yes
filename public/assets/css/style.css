@@ -1,3 +1,13 @@
+/** Header */
+header .callout p {
+    text-align: center;
+}
+header .callout button {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+
 /** Footer*/
 footer {
     margin-left: 0;
@@ -80,4 +90,6 @@ h3{
 #threeProjects .thumbnail{
     margin-top: 3%;
 }
+
+
 
