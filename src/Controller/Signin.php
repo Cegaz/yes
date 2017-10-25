@@ -18,7 +18,7 @@ class Signin extends AbstractController
             $message .= 'Veuillez accepter les CGU pour valider votre inscription.';
         }
 
-        if(isset($_POST['pseudo'])){ // ajouter vérif que pseudo n'existe pas déjà !!
+        if(isset($_POST['pseudo'])){ // ajouter vérif que pseudo n'existe pas déjà
             $pseudo = htmlspecialchars($_POST['pseudo']);
         } else {
             $message .= 'Veuillez renseigner votre pseudo<br>';
