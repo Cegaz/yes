@@ -3,6 +3,9 @@ header .top-bar input {
     max-width: 120px;
 }
 
+#userName {
+    margin : 8px;
+}
 
 /** Footer*/
 footer {

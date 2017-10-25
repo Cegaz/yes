@@ -2,7 +2,7 @@
 
 
 namespace Controller;
-session_start();
+
 class LogInManager
 {
 
@@ -15,22 +15,26 @@ class LogInManager
 
     public function checkUser($user, $password)
     {
-        $queryUser = "SELECT *
+        if(!empty($_POST['name'] || $_POST['password'])) {
+            $queryUser = "SELECT *
                   FROM user 
                   WHERE pseudo =:user
                   AND password =:password";
-        $prep = $this->_db->prepare($queryUser);
+            $prep = $this->_db->prepare($queryUser);
 
-        $prep->bindValue(':user', $user);
-        $prep->bindValue(':password', $password);
-        $prep->execute();
-        $fetch = $prep->fetchAll();
+            $prep->bindValue(':user', $user);
+            $prep->bindValue(':password', $password);
+            $prep->execute();
+            $fetch = $prep->fetchAll();
 
-        if (!empty($fetch)) {
-            $this->logUser($user);
-            return "Bonjour " . $_SESSION['name'];
-        } else {
-            return "Vous n'êtes pas connecté";
+            if (!empty($fetch)) {
+                 $this->logUser($user);
+            } else {
+                return "Identifiants invalides";
+            }
+        }else {
+            return "veuillez remplir tous les champs";
+
         }
 
     }
