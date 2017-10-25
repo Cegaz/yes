@@ -38,24 +38,28 @@
                                 <div class="small-12 medium-6 column small-order-2 medium-order-1">
                                     <div class="login-box-form-section">
                                         <h1 class="login-box-title">Sign up</h1>
-                                        <form method="post" action="/signin">
+                                        <form data-abide method="post" action="/signin">
                                             <input class="login-box-input" type="text" required pattern="[a-zA-Z]+" name="pseudo"
                                                    placeholder="pseudo" />
-                                            <input class="login-box-input" type="email" required pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}" name="email"
-                                                   placeholder="email" />
-                                            <input class="login-box-input" type="password" id="password" required
-                                                   pattern="[a-zA-Z]+" name="password" placeholder="mot de passe" />
+                                            <input class="login-box-input" type="email" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" name="email"
+                                            placeholder="email" />
 
-                                            <input class="login-box-input" type="password" required pattern="[a-zA-Z]+"
-                                                   data-equalto="password" name="password_conf" placeholder="confirmer votre mot
-                                       de passe"/>
+                                            <div class="password-field">
+                                                <input class="login-box-input" type="password" required id="password" name="password" placeholder="mot de passe">
+                                            </div>
+
+                                            <div class="password-confirmation-field">
+                                                <input class="login-box-input" type="password"
+                                                           data-equalto="password" name="password_conf" placeholder="confirmez votre mot de passe"/>
+                                                <small class="error">Vous n'avez pas entré le même mot de passe</small>
+                                            </div>
+
+                                            <input type="checkbox" name="cgu" value="1">j'accepte les cgu<br>
                                             <input class="login-box-submit-button" type="submit" name="submit"
                                                    value="valider" />
-                                            <input type="checkbox" name="cgu" value="1" placeholder="veuillez accepter les cgu" />
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

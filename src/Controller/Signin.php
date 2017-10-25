@@ -13,7 +13,7 @@ class Signin extends AbstractController
 {
     public function index(){
         $message = '';
-
+        var_dump($_POST);
         if($_POST['cgu'] != 1){
             $message .= 'Veuillez accepter les CGU pour valider votre inscription.<br>';
         }
