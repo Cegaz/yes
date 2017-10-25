@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div class="top-bar-right">
-            <form method="post" target="">
+            <form method="post" action="">
             <ul class="menu">
                 <li><input type="search" placeholder="Search"></li>
                 <li id="connectInputs">

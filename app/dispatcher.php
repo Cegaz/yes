@@ -9,6 +9,7 @@
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'Home/index');
+    $r->addRoute('POST', '/', 'Home/index');
     $r->addRoute('GET', '/projects', 'Projects/index');
 });
 
