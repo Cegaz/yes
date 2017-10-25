@@ -1,6 +1,14 @@
 {% extends 'home.html.twig' %}
 {% block content %}
-
+    <section id="tagListRequest" class="grid-container">
+    <div class="grid-x grid-margin-x">
+        {% for tag in tags %}
+            {% for value in tag %}
+                <a href="{{ value }}" alt="{{ value }}" type="button">{{ value }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    </section>
     <section id="threeProjects" class="grid-container">
         <div class="grid-x grid-margin-x">
 
