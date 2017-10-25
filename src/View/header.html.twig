@@ -54,7 +54,7 @@
                                                 <small class="error">Vous n'avez pas entré le même mot de passe</small>
                                             </div>
 
-                                            <input type="checkbox" name="cgu" value="1">j'accepte les cgu<br>
+                                            <input type="checkbox" name="cgu" value="accepted">J'accepte les CGU<br>
                                             <input class="login-box-submit-button" type="submit" name="submit"
                                                    value="valider" />
                                         </form>
@@ -63,7 +63,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </ul>
         </div>
     </div>
+    {% if error == true %}
+    <div class="callout alert">
+        <p>{{ message }}<a href="#openModal">  Se connecter</a></p>
+    </div>
+    {% endif %}
+
 </header>

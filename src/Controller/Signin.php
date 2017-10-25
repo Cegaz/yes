@@ -13,12 +13,12 @@ class Signin extends AbstractController
 {
     public function index(){
         $message = '';
-        var_dump($_POST);
-        if($_POST['cgu'] != 1){
-            $message .= 'Veuillez accepter les CGU pour valider votre inscription.<br>';
+
+        if(!isset($_POST['cgu'])){
+            $message .= 'Veuillez accepter les CGU pour valider votre inscription.';
         }
 
-        if(isset($_POST['pseudo'])){
+        if(isset($_POST['pseudo'])){ // ajouter vérif que pseudo n'existe pas déjà !!
             $pseudo = htmlspecialchars($_POST['pseudo']);
         } else {
             $message .= 'Veuillez renseigner votre pseudo<br>';
@@ -45,14 +45,15 @@ class Signin extends AbstractController
             $message .= 'Veuillez renseigner votre mot de passe et le confirmer<br>';
         }
 
-        if (isset($pseudo) && isset($email) && isset($password)) {
+        if (isset($pseudo) && isset($email) && isset($password) && isset($_POST['cgu'])) {
             require_once '../app/connect.php';
             $manager = new SigninManager($db);
             $manager->newUser($pseudo, $email, $password);
             return $this->_twig->render('home.html.twig');
 
         } else {
-            return $this->_twig->render('home.html.twig', ['message' => $message]);
+            return $this->_twig->
+            render('home.html.twig', ['message' => $message, 'error' => 'true']);
         }
     }
 }

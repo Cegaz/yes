@@ -25,7 +25,6 @@ class SigninManager
             ':email'=>$email,
             ':password'=>$password,
             ]);
-        var_dump('requete faite');
         return $querySuccess;
     }
 }
