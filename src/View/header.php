@@ -26,10 +26,24 @@
             </ul>
         </div>
         <div class="top-bar-right">
+            <form method="post" target="">
             <ul class="menu">
                 <li><input type="search" placeholder="Search"></li>
-                <li><button type="button" class="button">Connexion</button></li>
+                <li id="connectInputs">
+
+                    <input type="text" placeholder="Pseudo">
+                    <input type="password" placeholder="Mot de passe">
+
+                </li>
+
+                <li><button type="button" id="button" class="button">Connexion</button></li>
+
             </ul>
+            </form>
+
+
+
+
         </div>
     </div>
 

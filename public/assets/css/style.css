@@ -1,3 +1,9 @@
+/** Header */
+header .top-bar input {
+    max-width: 120px;
+}
+
+
 /** Footer*/
 footer {
     margin-left: 0;
