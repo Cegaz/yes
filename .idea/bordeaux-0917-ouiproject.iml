@@ -38,5 +38,6 @@
     </orderEntry>
     <orderEntry type="library" name="foundation" level="application" />
     <orderEntry type="library" name="jquery-3.2.1" level="application" />
+    <orderEntry type="library" name="foundation.reveal" level="application" />
   </component>
 </module>
