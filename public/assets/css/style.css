@@ -47,6 +47,11 @@ h1, h2 {
 }
 /** modal account*/
 
+a {
+    padding: 3px;
+    margin: 5px;
+}
+
 form .form-icons {
     text-align: center;
 }
@@ -90,6 +95,3 @@ h3{
 #threeProjects .thumbnail{
     margin-top: 3%;
 }
-
-
-
