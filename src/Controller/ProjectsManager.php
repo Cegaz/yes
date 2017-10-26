@@ -17,7 +17,8 @@ class ProjectsManager
         $this->db = $db;
     }
 
-    public function get3Projects() {
+    public function get3Projects()
+    {
         $result = $this->db->query('SELECT p.title, p.short_description,
         p.little_picture, p.amount, p.dead_line, ph.first_name, ph.name, ph.avatar, p.date
         FROM project p
