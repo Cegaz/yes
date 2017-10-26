@@ -36,4 +36,9 @@ class LogIn extends AbstractController
         return $this->_twig->render('textlogin.html.twig');
     }
 
+    public function session()
+    {
+        return $this->_twig->render('textlogin.html.twig');
+    }
+
 }

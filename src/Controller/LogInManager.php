@@ -2,7 +2,6 @@
 
 
 namespace Controller;
-
 class LogInManager
 {
 

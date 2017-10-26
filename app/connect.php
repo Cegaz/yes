@@ -1,4 +1,2 @@
 <?php
-
-
-$db = new PDO('mysql:host=localhost;dbname=ouiproject', '', '');
+$db = new PDO('mysql:host=;dbname=', '', '');
