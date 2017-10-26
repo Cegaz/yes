@@ -1,2 +1,4 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=ouiProject', 'pinpin', 'alibi*12');
+
+
+$db = new PDO('mysql:host=localhost;dbname=ouiproject', '', '');

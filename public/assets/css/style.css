@@ -1,11 +1,24 @@
 /** Header */
+
 header .top-bar input {
     max-width: 120px;
 }
 
+
+header .callout p {
+    text-align: center;
+}
+
+header .callout button {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+}
+
+
 #userName {
     margin : 8px;
-}
+  }
 
 /** Footer*/
 footer {
@@ -30,7 +43,6 @@ h1, h2 {
     color: whitesmoke;
 }
 
-/**project button */
 #homeProjectButton {
     text-align: center;
 
@@ -45,7 +57,9 @@ h1, h2 {
     border-radius: 100%;
 
 }
+/** modal account*/
 
+<<<<<<< HEAD
 /* show project : tag list */
 a {
     padding: 3px;
@@ -53,6 +67,31 @@ a {
 }
 
 /* show project */
+=======
+form .form-icons {
+    text-align: center;
+}
+
+form .form-icons h4 {
+    margin-bottom: 1rem;
+}
+
+form .form-icons .input-group-label {
+    background-color: #1779ba;
+    border-color: #1779ba;
+}
+
+form .form-icons .input-group-field {
+    border-color: #1779ba;
+}
+
+form .form-icons .fa {
+    color: white;
+    width: 1rem;
+}
+
+/** */
+>>>>>>> dev
 h3{
     font-size: 1.5em;
     font-weight: bold;
@@ -73,4 +112,3 @@ h3{
 #threeProjects .thumbnail{
     margin-top: 3%;
 }
-

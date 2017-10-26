@@ -18,11 +18,16 @@ class ProjectsManager
     }
 
     public function get3Projects() {
-        $result = $this->db->query('SELECT p.title, p.short_description,
-        p.little_picture, p.amount, p.dead_line, ph.first_name, ph.name, ph.avatar, p.date
+        $result = $this->db->query('SELECT p.id, p.title, p.short_description, p.date,
+        p.little_picture, p.amount, p.dead_line, p.id_project_holder,
+        ph.first_name, ph.name, ph.avatar, ph.id,
+        SUM(f.amount) AS collected, f.id_project
         FROM project p
         JOIN project_holder ph
         ON p.id_project_holder = ph.id
+        right JOIN financement f
+        ON f.id_project = p.id
+        GROUP BY f.id_project
         ORDER BY p.dead_line DESC
         LIMIT 3
         ');
@@ -40,10 +45,10 @@ class ProjectsManager
                 'first_name' => $data['first_name'],
                 'name' => $data['name'],
                 'avatar' => $data['avatar'],
-                'time_left' => round(($date2 - $date1)/3600/24)
-                //'collected' => $data['collected']
+                'time_left' => round(($date2 - $date1)/3600/24),
+                'collected' => $data['collected'],
+                'percent' => round($data['collected']/$data['amount']*100)
             ];
-
         }
 
         return $projects;

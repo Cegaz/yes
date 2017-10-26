@@ -11,7 +11,3 @@ $(document).ready(function() {
         $('#button').replaceWith('<button id="newButton" class="button" type="submit">OK !</button>');
     });
 });
-
-
-
-
