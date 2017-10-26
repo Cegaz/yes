@@ -1,4 +1,4 @@
-{% extends 'home.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block content %}
     <section id="tagListRequest" class="grid-container">
     <div class="grid-x grid-margin-x">
@@ -18,12 +18,12 @@
                 <div>
                     <h3>{{ project['title'] }}</h3>
                     <p>{{ project['short_description'] }}</p>
-                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
-                         aria-valuetext="25 percent" aria-valuemax="100">
-                    <span class="progress-meter" style="width: 25%">
-                    <p class="progress-meter-text">25%</p></span>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
+                         aria-valuetext="{{ project['percent'] }} %" aria-valuemax="100">
+                    <span class="progress-meter" style="width: {{ project['percent'] }}%;">
+                    <p class="progress-meter-text">{{ project['percent'] }}%</p></span>
                     </div>
-                    <p class="text-right">2 500€ / {{ project['amount'] }}€</br>
+                    <p class="text-right">{{ project['collected'] }}€ / {{ project['amount'] }}€</br>
                         {{ project['time_left'] }} j restants</p>
                     <p>par {{ project['first_name'] }} {{ project['name'] }} <img class="projectHolder" src="{{ project['avatar'] }}"></p>
                 </div>
@@ -31,5 +31,4 @@
     {% endfor %}
         </div>
     </section>
-
 {% endblock %}
