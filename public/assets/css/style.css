@@ -1,12 +1,24 @@
 /** Header */
+
+header .top-bar input {
+    max-width: 120px;
+}
+
+
 header .callout p {
     text-align: center;
 }
+
 header .callout button {
     background-color: transparent;
     color: black;
     font-weight: bold;
 }
+
+
+#userName {
+    margin : 8px;
+  }
 
 /** Footer*/
 footer {
@@ -47,11 +59,13 @@ h1, h2 {
 }
 /** modal account*/
 
+/* show project : tag list */
 a {
     padding: 3px;
     margin: 5px;
 }
 
+/* show project */
 form .form-icons {
     text-align: center;
 }
