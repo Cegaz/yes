@@ -4,9 +4,14 @@
     <div class="grid-x grid-margin-x">
         {% for tag in tags %}
             {% for value in tag %}
-                <a href="{{ value }}" alt="{{ value }}" type="button">{{ value }}</a>
+                <a href="/tag/{{ value }}" alt="{{ value }}" type="button">{{ value }}</a>
             {% endfor %}
         {% endfor %}
+        <div>
+            {% block sortByTag %}
+
+            {% endblock %}
+        </div>
     </div>
     </section>
     <section id="threeProjects" class="grid-container">
