@@ -21,8 +21,9 @@ class ProjectHolderSpace extends AbstractController
             $unauthorized = "Vous n'avez pas accès à cet espace";
         } else {
             $_SESSION= $datas;
+            $projectPreparation = $manager->showProjectPreparation($_SESSION->id);
         }
-            return $this->_twig->render('projectHolderSpace.html.twig', ['unauthorized' => $unauthorized, 'sess' => $_SESSION ]);
+            return $this->_twig->render('projectHolderSpace.html.twig', ['unauthorized' => $unauthorized, 'sess' => $_SESSION, 'projectPreparation' => $projectPreparation]);
 
     }
 
