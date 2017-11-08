@@ -32,7 +32,8 @@
         <div class="top-bar-right">
             <form method="post" action="/login">
             <ul class="menu">
-                <li id="userName">{{ sess.name }}{{ login }}</li>
+                <li id="userName">{{ sess.pseudo }}{{ login }}</li>
+                <li><a class="button" href="/projectHolderSpace" alt="projectHolderSpace">Mes projets</a></li>
                 <li id="connectInputs">
                     <input type="text" placeholder="Pseudo"  name="user">
                     <input type="password" placeholder="Mot de passe"  name="password">

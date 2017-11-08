@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% if unauthorized %}
+    <h1>{{ unauthorized }}</h1>
+    {% else %}
+    <h1>Espace porteur de projet : {{ sess.first_name ~ " " ~ sess.name }}</h1>
+    <h2>{{ sess.structure_name }}</h2>
+    {% endif %}
+{% endblock %}
