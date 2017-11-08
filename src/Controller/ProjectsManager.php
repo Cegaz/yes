@@ -18,6 +18,8 @@ class ProjectsManager
     }
 
     public function get3Projects() {
+
+
         $result = $this->db->query('SELECT p.id, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
         ph.first_name, ph.name, ph.avatar, ph.id,
@@ -29,7 +31,7 @@ class ProjectsManager
         ON f.id_project = p.id
         GROUP BY f.id_project
         ORDER BY p.dead_line DESC
-        LIMIT 3
+        LIMIT 3;
         ');
 
         $projects = [];

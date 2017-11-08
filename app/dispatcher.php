@@ -14,7 +14,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/session', 'LogIn/session');
     $r->addRoute('GET', '/projets', 'Projects/index');
     $r->addRoute('POST', '/inscription', 'Signin/index');
-    $r->addRoute('GET', '/projectHolderSpace', 'ProjectHolderSpace/index');
+    $r->addRoute('GET', '/espace-porteur', 'ProjectHolderSpace/index');
 });
 
 // Fetch method and URI from somewhere
