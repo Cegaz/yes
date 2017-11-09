@@ -39,5 +39,4 @@ class LogIn extends AbstractController
     {
         return $this->_twig->render('textlogin.html.twig');
     }
-
 }

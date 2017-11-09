@@ -27,10 +27,9 @@ class ProjectHolderSpace extends AbstractController
             $published = $projectManager->getProjectsAbstracts($_SESSION->id, 'publié');
             $financing = $projectManager->getProjectsAbstracts($_SESSION->id, 'en financement');
             $closed= $projectManager->getProjectsAbstracts($_SESSION->id, 'terminé');
+            $validationWaiting= $projectManager->getProjectsAbstracts($_SESSION->id, 'en attente de validation');
         }
-            return $this->_twig->render('projectHolderSpace.html.twig', ['unauthorized' => $unauthorized, 'sess' => $_SESSION, 'projectPreparation' => $projectPreparation, 'published' => $published, 'financing' => $financing, 'closed' => $closed]);
-
+            return $this->_twig->render('projectHolderSpace.html.twig', ['unauthorized' => $unauthorized, 'sess' => $_SESSION, 'projectPreparation' => $projectPreparation, 'published' => $published, 'financing' => $financing, 'closed' => $closed, 'validationWaiting' => $validationWaiting]);
     }
-
 }
 
