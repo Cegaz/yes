@@ -24,10 +24,12 @@ class LogInManager
             $prep->bindValue(':user', $user);
             $prep->bindValue(':password', $password);
             $prep->execute();
-            $fetch = $prep->fetchAll();
+            $fetch = $prep->fetch();
 
             if (!empty($fetch)) {
-                 $this->logUser($user);
+                 $_SESSION['pseudo']= $user;
+                 $_SESSION['idUser']= $fetch['id'];
+
             } else {
                 return "Identifiants invalides";
             }
@@ -38,11 +40,6 @@ class LogInManager
 
     }
 
-    public function logUser($user)
-    {
-        return $_SESSION['name'] = $user;
-
-    }
 
 
 }

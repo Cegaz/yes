@@ -21,7 +21,8 @@ class SigninManager
     public function newUser($pseudo, $email, $password)
     {
         $prep = $this->db->prepare('INSERT INTO user(pseudo, email, password) VALUES(:pseudo, :email, :password)');
-        $querySuccess = $prep->execute([':pseudo'=>$pseudo,
+        $querySuccess = $prep->execute([
+            ':pseudo'=>$pseudo,
             ':email'=>$email,
             ':password'=>$password,
             ]);
