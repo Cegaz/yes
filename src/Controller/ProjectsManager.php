@@ -17,8 +17,24 @@ class ProjectsManager
         $this->db = $db;
     }
 
-    public function get3Projects() {
-        $result = $this->db->query('SELECT p.id, p.title, p.short_description, p.date,
+    public function getProjectsAbstracts($id, $progress, $limit) {
+        $queryId="";
+        $queryProgress= "";
+        $queryLimit="";
+
+        if($id !==null) {
+            $queryProgress = " WHERE p.progress = :progress";
+        }
+
+        if($progress !== null){
+            $queryId = " AND p.id_project_holder = $id";
+        }
+
+        if($limit !== null) {
+            $queryLimit = " LIMIT " . $limit;
+        }
+
+        $query = 'SELECT p.id, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
         ph.first_name, ph.name, ph.avatar, ph.id,
         SUM(f.amount) AS collected, f.id_project
@@ -26,14 +42,16 @@ class ProjectsManager
         JOIN project_holder ph
         ON p.id_project_holder = ph.id
         right JOIN financement f
-        ON f.id_project = p.id
+        ON f.id_project = p.id' . $queryProgress. $queryId . '
         GROUP BY f.id_project
-        ORDER BY p.dead_line DESC
-        LIMIT 3
-        ');
+        ORDER BY p.dead_line DESC' . $queryLimit . ';';
+
+        $prep = $this->db->prepare($query);
+        $prep->bindValue(':progress', $progress);
+        $prep->execute();
 
         $projects = [];
-        while($data = $result->fetch()) {
+        while($data = $prep->fetch()) {
             $date1 = strtotime(date('Y-m-d'));
             $date2 = strtotime($data['dead_line']);
 

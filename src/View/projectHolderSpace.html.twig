@@ -1,0 +1,65 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% if unauthorized %}
+        <h1>{{ unauthorized }}</h1>
+    {% else %}
+        <h1>Espace porteur de projet : {{ sess.pseudo }}</h1>
+        <h2>{{ sess.structure_name }}</h2>
+
+        {% if projectPreparation %}
+        <section id="projectPreparation" class="grid-container">
+            <h2>Projets en cours de préparation</h2>
+            <div class="grid-x grid-margin-x">
+                {% for project in projectPreparation %}
+                    {% include 'projectAbstract.html.twig' %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if validationWaiting %}
+            <section id="published" class="grid-container">
+                <h2>Projets en attente de validation</h2>
+                <div class="grid-x grid-margin-x">
+                    {% for project in validationWaiting %}
+                        {% include 'projectAbstract.html.twig' %}
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if published %}
+            <section id="published" class="grid-container">
+                <h2>Projets publiés</h2>
+                <div class="grid-x grid-margin-x">
+                    {% for project in published %}
+                        {% include 'projectAbstract.html.twig' %}
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if financing %}
+        <section id="financing" class="grid-container">
+            <h2>Projets en cours de financement</h2>
+            <div class="grid-x grid-margin-x">
+                {% for project in financing %}
+                    {% include 'projectAbstract.html.twig' %}
+                {% endfor %}
+            </div>
+        </section>
+            {% endif %}
+
+        {% if closed %}
+        <section id="closed" class="grid-container">
+            <h2>Projets terminés</h2>
+            <div class="grid-x grid-margin-x">
+                {% for project in closed %}
+                    {% include 'projectAbstract.html.twig' %}
+                {% endfor %}
+            </div>
+        </section>
+            {% endif %}
+    {% endif %}
+{% endblock %}
