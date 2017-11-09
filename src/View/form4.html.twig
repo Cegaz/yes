@@ -1,0 +1,11 @@
+{% extends 'form1.html.twig' %}
+
+{% block banner %}
+    {{ parent() }}
+    <p>{{ message }}</p>
+{% endblock %}
+
+{% block content %}
+    <a href="/espace-porteur/sauvegarde" class="button">j'enregistre et je complèterai + tard</a>
+    <a href="/depot/publication" class="success button">je publie</a>
+{% endblock %}

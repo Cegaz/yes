@@ -14,6 +14,14 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/session', 'LogIn/session');
     $r->addRoute('GET', '/projets', 'Projects/index');
     $r->addRoute('POST', '/inscription', 'Signin/index');
+    $r->addRoute(['POST', 'GET'], '/depot', 'Deposit/index');
+    $r->addRoute(['POST', 'GET'], '/depot/form1', 'Deposit/form1');
+    $r->addRoute(['POST', 'GET'], '/depot/form2', 'Deposit/form2');
+    $r->addRoute(['POST', 'GET'], '/depot/form3', 'Deposit/form3');
+    $r->addRoute(['POST', 'GET'], '/depot/form4', 'Deposit/form4');
+    $r->addRoute(['POST', 'GET'], '/depot/form5', 'Deposit/form5');
+    $r->addRoute('GET', '/depot/publication', 'Deposit/publish');
+    $r->addRoute('GET', '/espace-porteur', ''); // AJOUTER CONTRÔLEUR
 });
 
 // Fetch method and URI from somewhere
