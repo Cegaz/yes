@@ -17,9 +17,7 @@ class Projects extends AbstractController
         $projects = $manager->getProjectsAbstracts(null, null, 3);
         $tags = new TagsManager($db);
         $results = $tags->listTags();
-        /*foreach($projects as $project){
-            $project['collected'] = 2000;
-        }*/
+
         return $this->_twig->render('projects.html.twig', ['projects' => $projects, 'tags' => $results]);
     }
 }
