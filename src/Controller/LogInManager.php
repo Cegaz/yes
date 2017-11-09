@@ -33,11 +33,6 @@ class LogInManager
             }
         }else {
             return "veuillez remplir tous les champs";
-
         }
-
     }
-
-
-
 }

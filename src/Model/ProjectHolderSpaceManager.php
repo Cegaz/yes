@@ -29,5 +29,4 @@ class ProjectHolderSpaceManager
         $datas = $result->fetch(\PDO::FETCH_OBJ);
         return $datas;
     }
-
 }

@@ -18,6 +18,17 @@
         </section>
         {% endif %}
 
+        {% if validationWaiting %}
+            <section id="published" class="grid-container">
+                <h2>Projets en attente de validation</h2>
+                <div class="grid-x grid-margin-x">
+                    {% for project in validationWaiting %}
+                        {% include 'projectAbstract.html.twig' %}
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
         {% if published %}
             <section id="published" class="grid-container">
                 <h2>Projets publiés</h2>
