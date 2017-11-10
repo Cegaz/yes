@@ -12,16 +12,20 @@ use Model\SigninManager;
 class Signin extends AbstractController
 {
     public function index(){
+        require_once '../app/connect.php';
+        $manager = new SigninManager($db);
         $message = '';
 
-        if(!isset($_POST['cgu'])){
+        if (!isset($_POST['cgu'])){
             $message .= 'Veuillez accepter les CGU pour valider votre inscription.';
         }
 
-        if(isset($_POST['pseudo'])){ // ajouter vérif que pseudo n'existe pas déjà...
+        if (isset($_POST['pseudo']) && !$manager->pseudoAlreadyTaken($_POST['pseudo'])) {
             $pseudo = htmlspecialchars($_POST['pseudo']);
+        } elseif($manager->pseudoAlreadyTaken($_POST['pseudo'])) {
+            $message .= 'Ce pseudo est déjà pris, veuillez en choisir un autre.';
         } else {
-            $message .= 'Veuillez renseigner votre pseudo<br>';
+            $message .= 'Veuillez renseigner votre pseudo.';
         }
 
         if (isset($_POST['email'])) {
@@ -46,8 +50,6 @@ class Signin extends AbstractController
         }
 
         if (isset($pseudo) && isset($email) && isset($password) && isset($_POST['cgu'])) {
-            require_once '../app/connect.php';
-            $manager = new SigninManager($db);
             $manager->newUser($pseudo, $email, $password);
             return $this->_twig->render('home.html.twig');
 
