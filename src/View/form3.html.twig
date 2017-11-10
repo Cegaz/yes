@@ -2,7 +2,9 @@
 
 {% block banner %}
     {{ parent() }}
-    <p>{{ message }}</p>
+    <div class="callout success">
+        <h5>{{ message }}</h5>
+    </div>
 {% endblock %}
 
 {% block content %}
@@ -40,8 +42,8 @@
                 <label for="upload" class="button">Charger les images (3 max)</label>
                 <input type="file" id="upload" class="show-for-sr" name="upload[]" multiple="multiple">
             </div>
+            <input type="submit" class="button success" value="je valide cette étape">
         </div>
-        <input type="submit" class="button" value="je valide cette étape">
     </form>
 
 {% endblock %}

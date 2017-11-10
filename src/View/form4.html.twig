@@ -2,10 +2,16 @@
 
 {% block banner %}
     {{ parent() }}
-    <p>{{ message }}</p>
+    <div class="callout success">
+        <h5>{{ message }}</h5>
+    </div>
 {% endblock %}
 
 {% block content %}
-    <a href="/espace-porteur/sauvegarde" class="button">j'enregistre et je complèterai + tard</a>
-    <a href="/depot/publication" class="success button">je publie</a>
+    <div class="grid-container">
+        <div class="medium-6 cell">
+            <a href="/espace-porteur/sauvegarde" class="button">j'enregistre et je complèterai + tard</a>
+            <a href="/depot/publication" class="success button">je publie</a>
+        </div>
+    </div>
 {% endblock %}
