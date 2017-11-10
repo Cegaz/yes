@@ -13,6 +13,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/logout', 'LogIn/logOut');
     $r->addRoute('GET', '/session', 'LogIn/session');
     $r->addRoute('GET', '/projets', 'Projects/index');
+    $r->addRoute('GET', '/monCompte', 'Giver/index');
     $r->addRoute('POST', '/inscription', 'Signin/index');
     $r->addRoute('GET', '/tag/{tag}', 'sortByTag/index');
     $r->addRoute('GET', '/espace-porteur', 'ProjectHolderSpace/index');

@@ -109,6 +109,60 @@ h3{
 #threeProjects .thumbnail{
     margin-top: 3%;
 }
+<<<<<<< HEAD
+
+#commentListRequest .columns {
+    font-size: 12px;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #000000;
+
+}
+
+
+/** span */
+.custom-2 {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 25px;
+}
+
+.custom-2 span {
+    display: inline-block;
+    position: relative;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.custom-2 span:before, .custom-2 span:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 9999px;
+    top: 50%;
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-top-color: #1779ba;
+    margin-top: -2px;
+}
+
+.custom-2 span:before {
+    right: 100%;
+}
+
+.custom-2 span:after {
+    left: 100%;
+}
+
+
+
+/** end span */
+
+=======
 #deposit-button{
     text-align: center;
 }
+>>>>>>> origin/lastUS
