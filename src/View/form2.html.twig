@@ -2,7 +2,9 @@
 
 {% block banner %}
     {{ parent() }}
-    <p>{{ message }}</p>
+    <div class="callout success">
+        <h5>{{ message }}</h5>
+    </div>
 {% endblock %}
 
 
@@ -10,6 +12,7 @@
 
     <form method="post" action="/depot/form3" enctype="multipart/form-data">
         <div class="grid-container">
+            <h3>Votre projet</h3>
             <div class="medium-6 cell">
                 <label>Nom du projet :
                     <input type="text" name="title">
@@ -25,8 +28,8 @@
                 <label for="upload" class="button">Charger une image</label>
                 <input type="file" id="upload" class="show-for-sr" name="littlePicture">
             </div>
+            <input type="submit" class="button success" value="Je valide cette étape">
         </div>
-        <input type="submit" class="button" value="je valide cette étape">
     </form>
 
 {% endblock %}

@@ -6,6 +6,7 @@
 {% block content %}
     <form method="post" action="/depot/form2" enctype="multipart/form-data">
         <div class="grid-container">
+            <h3>Profil du porteur de projet</h3>
             <div class="medium-6 cell">
                 <label>Nom de la structure :
                     <input type="text" name="structure_name">
@@ -32,8 +33,8 @@
                 <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
                 <input type="file" id="upload" name="avatar" class="show-for-sr">
             </div>
+            <input type="submit" class="button success" value="Je valide cette étape">
         </div>
-        <input type="submit" class="button" value="je valide cette étape">
     </form>
 
 {% endblock %}
