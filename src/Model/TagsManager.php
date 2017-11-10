@@ -4,7 +4,6 @@
 namespace Model;
 
 
-
 class TagsManager
 {
     private $db;

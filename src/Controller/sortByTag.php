@@ -10,6 +10,7 @@ namespace Controller;
 
 
 use Model\sortByTagManager;
+use Model\TagsManager;
 
 class sortByTag extends AbstractController
 {

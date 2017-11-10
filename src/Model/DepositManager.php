@@ -41,10 +41,10 @@ class DepositManager
             'INSERT INTO project(title, short_description, little_picture, id_project_holder)
             VALUES(:title, :shortDescription, :littlePicture, :idProjectHolder)');
         $querySuccess = $prep->execute([
-            ':idProjectHolder'=>$_SESSION['idProjectHolder'],
             ':title'=>$title,
             ':shortDescription'=>$shortDescription,
-            ':littlePicture'=>$littlePicture
+            ':littlePicture'=>$littlePicture,
+            ':idProjectHolder'=>$_SESSION['idProjectHolder']
         ]);
         return $querySuccess;
     }
