@@ -6,7 +6,7 @@
  * Time: 17:14
  */
 
-namespace Controller;
+namespace Model;
 
 
 class GiverManager

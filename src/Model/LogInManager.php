@@ -1,7 +1,8 @@
 <?php
 
 
-namespace Controller;
+namespace Model;
+
 class LogInManager
 {
 

@@ -6,7 +6,7 @@
  * Time: 14:23
  */
 
-namespace Controller;
+namespace Model;
 
 class ProjectsManager
 {

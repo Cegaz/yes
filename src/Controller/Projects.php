@@ -8,6 +8,9 @@
 
 namespace Controller;
 
+use Model\TagsManager;
+use Model\ProjectsManager;
+
 class Projects extends AbstractController
 {
     public function index(){

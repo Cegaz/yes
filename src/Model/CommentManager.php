@@ -6,7 +6,7 @@
  * Time: 11:22
  */
 
-namespace Controller;
+namespace Model;
 
 
 class CommentManager

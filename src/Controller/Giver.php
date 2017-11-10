@@ -7,6 +7,8 @@
  */
 
 namespace Controller;
+use Model\GiverManager;
+use Model\CommentManager;
 
 class Giver extends AbstractController
 {
