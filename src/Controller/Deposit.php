@@ -51,7 +51,7 @@ class Deposit extends AbstractController
         $manager = new DepositManager($db);
         $manager->updateStep(2);
 
-        $littlePicture = $this->upload_image($_FILES, 'littlePicture', 'form2.html.twig');
+        $littlePicture = $this->upload_image($_FILES['littlePicture'], 'form2.html.twig');
 
         $manager = new DepositManager($db);
         $result = $manager->newDeposit($_POST['title'], $_POST['shortDescription'],
