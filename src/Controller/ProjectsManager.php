@@ -22,11 +22,11 @@ class ProjectsManager
         $queryProgress= "";
         $queryLimit="";
 
-        if($id !==null) {
+        if($progress !==null) {
             $queryProgress = " WHERE p.progress = :progress";
         }
 
-        if($progress !== null){
+        if($id !== null){
             $queryId = " AND p.id_project_holder = $id";
         }
 
