@@ -25,21 +25,28 @@ class LogInManager
             $prep->bindValue(':password', $password);
             $prep->execute();
             $fetch = $prep->fetch();
+<<<<<<< HEAD
 
             if (!empty($fetch)) {
                  $_SESSION['pseudo']= $user;
                  $_SESSION['idUser']= $fetch['id'];
 
+=======
+            if (!empty($fetch)) {
+                $_SESSION['pseudo'] = $user;
+                $_SESSION['idUser'] = $fetch['id'];
+>>>>>>> origin/lastUS
             } else {
                 return "Identifiants invalides";
             }
         }else {
             return "veuillez remplir tous les champs";
-
         }
-
     }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> origin/lastUS
 }

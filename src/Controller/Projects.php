@@ -14,12 +14,10 @@ class Projects extends AbstractController
         require_once '../app/connect.php';
 
         $manager = new ProjectsManager($db);
-        $projects = $manager->get3Projects();
+        $projects = $manager->getProjectsAbstracts(null, null, 3);
         $tags = new TagsManager($db);
         $results = $tags->listTags();
-        /*foreach($projects as $project){
-            $project['collected'] = 2000;
-        }*/
+
         return $this->_twig->render('projects.html.twig', ['projects' => $projects, 'tags' => $results]);
     }
 }

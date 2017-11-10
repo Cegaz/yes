@@ -101,7 +101,7 @@ h3{
     width: 50px;
     height: 50px;
 }
-#threeProjects .columns{
+#threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns {
     padding: 1%;
     margin: 1%;
     border: 1px solid #BBB;
@@ -109,6 +109,7 @@ h3{
 #threeProjects .thumbnail{
     margin-top: 3%;
 }
+<<<<<<< HEAD
 
 #commentListRequest .columns {
     font-size: 12px;
@@ -160,3 +161,8 @@ h3{
 
 /** end span */
 
+=======
+#deposit-button{
+    text-align: center;
+}
+>>>>>>> origin/lastUS

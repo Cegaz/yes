@@ -24,7 +24,7 @@
                 <li class="menu-text"  >Oui Project</li>
                 <li><a href="/" alt="acceuil">Acceuil</a></li>
                 <li><a href="#" alt="notre mission">Notre mission</a></li>
-                <li><a href="#" alt="financer son projet">Financer son projet</a></li>
+                <li><a href="/depot" alt="financer son projet">Financer son projet</a></li>
                 <li><a href="#" alt="soutenir un projet">Soutenir un projet</a></li>
                 <li><input type="search" placeholder="Search"></li>
 
@@ -34,7 +34,11 @@
             <form method="post" action="/login">
             <ul class="menu">
                 <li id="userName">{{ sess.pseudo }}{{ login }}</li>
+<<<<<<< HEAD
                 <li><a href="/monCompte" class="button" id="userSpace">Mon Compte</a></li>
+=======
+                <li><a class="button" href="/espace-porteur" alt="projectHolderSpace">Mes projets</a></li>
+>>>>>>> origin/lastUS
                 <li id="connectInputs">
                     <input type="text" placeholder="Pseudo"  name="user">
                     <input type="password" placeholder="Mot de passe"  name="password">
@@ -46,7 +50,11 @@
             </form>
             <div class="reveal" id="openModal" data-reveal>
                 <form data-abide novalidate method="post" action="/inscription">
+<<<<<<< HEAD
                 <div data-abide-error class="alert callout" style="display: none;">
+=======
+                    <div data-abide-error class="alert callout" style="display: none;">
+>>>>>>> origin/lastUS
                         <p><i class="fi-alert"></i>les informations entrées sont incorrectes</p>
                     </div>
                     <div class="form-icons">

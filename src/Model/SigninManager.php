@@ -28,4 +28,11 @@ class SigninManager
             ]);
         return $querySuccess;
     }
+
+    public function pseudoAlreadyTaken($pseudo)
+    {
+        $query = $this->db->prepare('SELECT pseudo FROM user WHERE pseudo=:pseudo');
+        $querySuccess = $query->execute([':pseudo'=>$pseudo]);
+        return $querySuccess;
+    }
 }
