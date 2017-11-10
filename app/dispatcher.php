@@ -14,6 +14,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/session', 'LogIn/session');
     $r->addRoute('GET', '/projets', 'Projects/index');
     $r->addRoute('POST', '/inscription', 'Signin/index');
+    $r->addRoute('GET', '/tag/{tag}', 'sortByTag/index');
     $r->addRoute('GET', '/espace-porteur', 'ProjectHolderSpace/index');
     $r->addRoute(['POST', 'GET'], '/depot', 'Deposit/index');
     $r->addRoute(['POST', 'GET'], '/depot/form1', 'Deposit/form1');
