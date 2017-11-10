@@ -1,8 +1,7 @@
 <?php
 
 
-namespace Controller;
-
+namespace Model;
 
 
 class TagsManager

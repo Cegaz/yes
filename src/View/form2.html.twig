@@ -1,0 +1,35 @@
+{% extends 'form1.html.twig' %}
+
+{% block banner %}
+    {{ parent() }}
+    <div class="callout success">
+        <h5>{{ message }}</h5>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <form method="post" action="/depot/form3" enctype="multipart/form-data">
+        <div class="grid-container">
+            <h3>Votre projet</h3>
+            <div class="medium-6 cell">
+                <label>Nom du projet :
+                    <input type="text" name="title">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Courte description :
+                    <input type="text" name="shortDescription" placeholder="500 mots maximum">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Image principale :</label>
+                <label for="upload" class="button">Charger une image</label>
+                <input type="file" id="upload" class="show-for-sr" name="littlePicture">
+            </div>
+            <input type="submit" class="button success" value="Je valide cette étape">
+        </div>
+    </form>
+
+{% endblock %}

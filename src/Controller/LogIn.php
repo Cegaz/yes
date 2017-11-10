@@ -2,6 +2,7 @@
 
 namespace Controller;
 session_start();
+use Model\LogInManager;
 
 class LogIn extends AbstractController
 {
@@ -39,5 +40,4 @@ class LogIn extends AbstractController
     {
         return $this->_twig->render('textlogin.html.twig');
     }
-
 }

@@ -1,0 +1,17 @@
+{% extends 'form1.html.twig' %}
+
+{% block banner %}
+    {{ parent() }}
+    <div class="callout success">
+        <h5>{{ message }}</h5>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="grid-container">
+        <div class="medium-6 cell">
+            <a href="/espace-porteur" class="button">j'enregistre et je complèterai + tard</a>
+            <a href="/depot/publication" class="success button">je publie</a>
+        </div>
+    </div>
+{% endblock %}
