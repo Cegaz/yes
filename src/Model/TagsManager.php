@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Controller;
+namespace Model;
 
 
 

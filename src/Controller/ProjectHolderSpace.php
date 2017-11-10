@@ -10,6 +10,7 @@ namespace Controller;
 
 
 use Model\ProjectHolderSpaceManager;
+use Model\ProjectsManager;
 
 class ProjectHolderSpace extends AbstractController
 {
