@@ -1,40 +1,27 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: cecile
- * Date: 19/10/17
- * Time: 14:23
+ * User: hurricane
+ * Date: 07/11/17
+ * Time: 17:14
  */
 
 namespace Controller;
 
-class ProjectsManager
+
+class GiverManager
 {
     private $db;
+
+
 
     public function __construct($db)
     {
         $this->db = $db;
     }
 
-    public function getProjectsAbstracts($id, $progress, $limit) {
-        $queryId="";
-        $queryProgress= "";
-        $queryLimit="";
-
-        if($progress !==null) {
-            $queryProgress = " WHERE p.progress = :progress";
-        }
-
-        if($id !== null){
-            $queryId = " AND p.id_project_holder = $id";
-        }
-
-        if($limit !== null) {
-            $queryLimit = " LIMIT " . $limit;
-        }
-
-        $query = 'SELECT p.id, p.title, p.short_description, p.date,
+    public function get3Projects() {
+        $result = $this->db->query('SELECT p.id, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
         ph.first_name, ph.name, ph.avatar, ph.id,
         SUM(f.amount) AS collected, f.id_project
@@ -42,16 +29,15 @@ class ProjectsManager
         JOIN project_holder ph
         ON p.id_project_holder = ph.id
         right JOIN financement f
-        ON f.id_project = p.id' . $queryProgress. $queryId . '
+        ON f.id_project = p.id
+        WHERE p.id = '.$_SESSION['idUser'].'
         GROUP BY f.id_project
-        ORDER BY p.dead_line DESC' . $queryLimit . ';';
-
-        $prep = $this->db->prepare($query);
-        $prep->bindValue(':progress', $progress);
-        $prep->execute();
+        ORDER BY p.dead_line DESC
+        LIMIT 4
+        ');
 
         $projects = [];
-        while($data = $prep->fetch()) {
+        while($data = $result->fetch()) {
             $date1 = strtotime(date('Y-m-d'));
             $date2 = strtotime($data['dead_line']);
 

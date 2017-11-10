@@ -21,7 +21,8 @@
     <div class="top-bar" id="responsive-menu">
         <div class="top-bar-left ">
             <ul class="menu">
-                <li class="menu-text">Oui Project</li>
+                <li class="menu-text"  >Oui Project</li>
+                <li><a href="/" alt="acceuil">Acceuil</a></li>
                 <li><a href="#" alt="notre mission">Notre mission</a></li>
                 <li><a href="/depot" alt="financer son projet">Financer son projet</a></li>
                 <li><a href="#" alt="soutenir un projet">Soutenir un projet</a></li>
@@ -32,19 +33,28 @@
         <div class="top-bar-right">
             <form method="post" action="/login">
             <ul class="menu">
-                <li id="userName">{{ sess.name }}{{ login }}</li>
+                <li id="userName">{{ sess.pseudo }}{{ login }}</li>
+
+                <li><a href="/monCompte" class="button" id="userSpace">Mon Compte</a></li>
+
+                <li><a class="button" href="/espace-porteur" alt="projectHolderSpace">Mes projets</a></li>
+
                 <li id="connectInputs">
                     <input type="text" placeholder="Pseudo"  name="user">
                     <input type="password" placeholder="Mot de passe"  name="password">
                 </li>
+
                 <li><button type="button" id="button" class="button">Connexion</button></li>
                 <li><button type="button" data-open="openModal" class="button">Inscription</button></li>
             </ul>
             </form>
-
             <div class="reveal" id="openModal" data-reveal>
-                <form data-abide novalidate method="post" action="/signin">
+                <form data-abide novalidate method="post" action="/inscription">
+
+                <div data-abide-error class="alert callout" style="display: none;">
+
                     <div data-abide-error class="alert callout" style="display: none;">
+
                         <p><i class="fi-alert"></i>les informations entrées sont incorrectes</p>
                     </div>
                     <div class="form-icons">

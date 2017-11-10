@@ -21,10 +21,18 @@ class SigninManager
     public function newUser($pseudo, $email, $password)
     {
         $prep = $this->db->prepare('INSERT INTO user(pseudo, email, password) VALUES(:pseudo, :email, :password)');
-        $querySuccess = $prep->execute([':pseudo'=>$pseudo,
+        $querySuccess = $prep->execute([
+            ':pseudo'=>$pseudo,
             ':email'=>$email,
             ':password'=>$password,
             ]);
+        return $querySuccess;
+    }
+
+    public function pseudoAlreadyTaken($pseudo)
+    {
+        $query = $this->db->prepare('SELECT pseudo FROM user WHERE pseudo=:pseudo');
+        $querySuccess = $query->execute([':pseudo'=>$pseudo]);
         return $querySuccess;
     }
 }
