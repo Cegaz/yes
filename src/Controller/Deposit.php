@@ -53,14 +53,12 @@ class Deposit extends AbstractController
 
         $littlePicture = $this->upload_image($_FILES, 'littlePicture', 'form2.html.twig');
 
-        require_once '../app/connect.php';
         $manager = new DepositManager($db);
         $result = $manager->newDeposit($_POST['title'], $_POST['shortDescription'],
             $littlePicture);
         $_SESSION['idProject'] = $db->lastInsertId();
 
         if($result) {
-            require_once '../app/connect.php';
             $manager = new DepositManager($db);
             $manager->updateStep(2);
             return $this->_twig->render('form3.html.twig',
@@ -99,7 +97,6 @@ class Deposit extends AbstractController
         $result = $manager->updateDeposit($_POST['description1'], $_POST['description2'],
             $_POST['description3'], $_POST['description4'], $_POST['sponsors'], $pathList);
         if($result) {
-            require_once '../app/connect.php';
             $manager = new DepositManager($db);
             $manager->updateStep(3);
             return $this->_twig->render('form4.html.twig',
