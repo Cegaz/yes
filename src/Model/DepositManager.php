@@ -31,6 +31,7 @@ class DepositManager
             ':phone'=>$phone,
             ':avatar'=>$avatar
         ]);
+
         return $querySuccess;
     }
 
