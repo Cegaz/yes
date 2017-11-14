@@ -25,9 +25,9 @@ class LogIn extends AbstractController
         $manager = new LogInManager($db);
         $user = $this->getUser();
         $password = $this->getPassword();
-        $login = $manager->checkUser($user, $password);
+        $manager->checkUser($user, $password);
 
-        return $this->_twig->render('home.html.twig', ['login' => $login, 'sess' => $_SESSION]);
+        header('Location:' . $_SERVER['HTTP_REFERER']);
     }
 
     public function logOut()

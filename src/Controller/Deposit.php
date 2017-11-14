@@ -13,7 +13,7 @@ use Model\DepositManager;
 class Deposit extends AbstractController
 {
     public function index(){
-        // AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
+        // TO DO : AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
         return $this->_twig->render('deposit.html.twig');
     }
 
@@ -85,7 +85,6 @@ class Deposit extends AbstractController
                 $path = '/assets/img/projects/' . $_SESSION['idProject'] . '-' . ($i + 1) .
                     '.' . $extension;
                 $destination = $_SERVER['DOCUMENT_ROOT'] . $path;
-                // AJOUTER CONDITION SI FICHIER N'EXISTE PAS DÉJÀ
                 if(move_uploaded_file($tmpFile, $destination)){
                     $pathList[] = $destination;
                 }
@@ -129,7 +128,7 @@ class Deposit extends AbstractController
         $manager = new DepositManager($db);
         $manager->changeProgress($_SESSION['idProject'], 'en attente de validation');
 
-        return $this->_twig->render('projectHolderSpace.html.twig');
+        header('Location:/espace-porteur');
     }
 
 }
