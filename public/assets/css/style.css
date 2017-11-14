@@ -3,7 +3,10 @@
 header .top-bar input {
     max-width: 120px;
 }
-
+.menu > li:first-child{
+    font-size:1.2em;
+    font-weight: bold;
+}
 
 header .callout p {
     text-align: center;
@@ -14,7 +17,6 @@ header .callout button {
     color: black;
     font-weight: bold;
 }
-
 
 #userName {
     margin : 8px;
