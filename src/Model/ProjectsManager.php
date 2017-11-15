@@ -42,9 +42,10 @@ class ProjectsManager
         JOIN project_holder ph
         ON p.id_project_holder = ph.id
         right JOIN financement f
-        ON f.id_project = p.id' . $queryProgress. $queryId . '
+        ON f.id_project = p.id ' . $queryProgress. $queryId . '
+        WHERE p.dead_line > NOW()
         GROUP BY f.id_project
-        ORDER BY p.dead_line DESC' . $queryLimit . ';';
+        ORDER BY p.dead_line ASC ' . $queryLimit . ';';
 
         $prep = $this->db->prepare($query);
         $prep->bindValue(':progress', $progress);
@@ -76,7 +77,7 @@ class ProjectsManager
         FROM project p
         JOIN project_holder ph
         ON p.id_project_holder = ph.id' . $queryProgress. $queryId . '
-        ORDER BY p.dead_line DESC' . $queryLimit . ';';
+        ORDER BY p.dead_line ASC ' . $queryLimit . ';';
             $prep = $this->db->prepare($query);
             $prep->bindValue(':progress', $progress);
             $prep->execute();
