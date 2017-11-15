@@ -144,7 +144,7 @@ h3{
     font-weight: bold;
     color: #555;
 }
-form h3{
+form h3, .holderSpaceTitle{
     margin: 30px;
 }
 .grid-container{
@@ -213,6 +213,28 @@ h5{
     background-color: #A1D490;
 }
 
+#deposit-button{
+    text-align: center;
+    margin-top: 40px;
+}
+#deposit > p{
+    margin: 30px;
+}
+#tutos{
+    text-align: center;
+    margin-top: 40px;
+}
+#tutos img{
+    height: 60px;
+}
+#tutos img:hover{
+    position: relative;
+    bottom: 20px;
+}
+#tutos a{
+    margin: 30px;
+}
+
 /** span */
 .custom-2 {
     display: block;
@@ -247,14 +269,4 @@ h5{
 
 .custom-2 span:after {
     left: 100%;
-}
-
-
-
-/** end span */
-
-
-#deposit-button{
-    text-align: center;
-    margin-top: 100px;
 }
