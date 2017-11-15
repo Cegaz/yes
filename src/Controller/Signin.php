@@ -7,6 +7,7 @@
  */
 
 namespace Controller;
+use Model\LogInManager;
 use Model\SigninManager;
 
 class Signin extends AbstractController
@@ -51,7 +52,9 @@ class Signin extends AbstractController
 
         if (isset($pseudo) && isset($email) && isset($password) && isset($_POST['cgu'])) {
             $manager->newUser($pseudo, $email, $password);
-            return $this->_twig->render('home.html.twig');
+            $logIn = new LogInManager($db);
+            $logIn->checkUser($pseudo, $password);
+            header('Location:/');
 
         } else {
             return $this->_twig->

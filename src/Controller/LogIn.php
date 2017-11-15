@@ -10,7 +10,7 @@ class LogIn extends AbstractController
     protected $_password;
 
     public function getUser(){
-        $this->_user = $_POST['user'];
+        $this->_user = $_POST['pseudo'];
         return $this->_user;
     }
 

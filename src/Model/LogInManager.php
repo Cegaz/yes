@@ -15,7 +15,8 @@ class LogInManager
 
     public function checkUser($user, $password)
     {
-        if (!empty($_POST['name'] || $_POST['password'])) {
+
+        if (!empty($_POST['pseudo'] || $_POST['password'])) {
             $queryUser = "SELECT *
                   FROM user 
                   WHERE pseudo =:user
