@@ -23,7 +23,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute(['POST', 'GET'], '/depot/form3', 'Deposit/form3');
     $r->addRoute(['POST', 'GET'], '/depot/form4', 'Deposit/form4');
     $r->addRoute(['POST', 'GET'], '/depot/form5', 'Deposit/form5');
-    $r->addRoute('GET', '/depot/publication', 'Deposit/publish');
+    $r->addRoute(['POST', 'GET'], '/depot/recap', 'Deposit/summary');
+    $r->addRoute(['POST', 'GET'], '/depot/publication', 'Deposit/publish');
 
 });
 
