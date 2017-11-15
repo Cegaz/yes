@@ -5,7 +5,6 @@
         <h1>{{ unauthorized }}</h1>
     {% else %}
         <h1>Espace porteur de projet : {{ sess.pseudo }}</h1>
-        <h2>{{ sess.structure_name }}</h2>
 
         {% if projectPreparation %}
         <section id="projectPreparation" class="grid-container">
