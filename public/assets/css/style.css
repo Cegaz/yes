@@ -1,5 +1,7 @@
 /** Header */
-
+.bold{
+    font-weight: bold;
+}
 header .top-bar input {
     max-width: 120px;
 }
