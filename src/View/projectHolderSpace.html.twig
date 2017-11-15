@@ -57,7 +57,18 @@
                 <h2>Projets terminés</h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in closed %}
-                        {% include 'projectAbstract.html.twig' %}
+                        <div class="small-12 medium-4 columns">
+                            <img class="thumbnail" src="{{ project.little_picture }}" alt="project">
+                            <div>
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.short_description }}</p>
+                                </div>
+                                <p class="text-right">
+                                   Terminé le : {{ project.dead_line|date("d/m/Y") }}</p>
+                                <p>par {{ project.first_name }} {{ project.name }} <img class="projectHolder"
+                                                                                        src="{{ project.avatar }}"></p>
+                            </div>
+                        </div>
                     {% endfor %}
                 </div>
             </section>
