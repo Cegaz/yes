@@ -1,43 +1,30 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
-    <section id="threeProjects" class="grid-container">
-
-
-            <h2 class="type-sidelines custom-2"><span>mes dernières contributions </span></h2>
-
+    <section id="amountRequest" class="grid-container">
+        <h2 class="type-sidelines custom-2"><span>mes contribution</span></h2>
         <div class="grid-x grid-margin-x">
-
-            {% for project in projects %}
-                <div class="small-12 medium-6 columns" id="titleProject">
-                    <div>
-                        <h3>{{ project['title'] }}</h3>
-                        <p>{{ project['short_description'] }}</p>
-                        <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
-                             aria-valuetext="{{ project['percent'] }} %" aria-valuemax="100">
-                    <span class="progress-meter" style="width: {{ project['percent'] }}%;">
-                    <p class="progress-meter-text">{{ project['percent'] }}%</p></span>
-                        </div>
-                        <p class="text-right">{{ project['collected'] }}€ / {{ project['amount'] }}€</br>
-                            {{ project['time_left'] }} j restants</p>
-                        <p>par {{ project['first_name'] }} {{ project['name'] }} <img class="projectHolder" src="{{ project['avatar'] }}"></p>
-                    </div>
-                </div>
-            {% endfor %}
+        {% for amount in amounts %}
+            <div class="small-12 medium-6 columns" id="titleProject">
+                <h5>ma contribution de {{ amount['amount'] }} euro</h5>
+                <h5>le  {{ amount['date']|date("d-m-Y") }}</h5>
+                <h5>sur le projet : {{ amount['title'] }}</h5>
+                <h5>{{ amount['short_description'] }}</h5>
+                <img class="projectHolder" src="{{ amount['little_picture'] }}">
+            </div>
+        {% endfor %}
         </div>
     </section>
 
     <section id="threeProjects" class="grid-container">
-
-
         <h2 class="type-sidelines custom-2"><span> plus de projets </span></h2>
-
         <div class="grid-x grid-margin-x">
-
             {% for project in projects %}
                 <div class="small-12 medium-6 columns" id="titleProject">
                     <div>
                         <h3>{{ project['title'] }}</h3>
                         <p>{{ project['short_description'] }}</p>
+                        <p>{{ amount['id_user'] }}</p>
+                        <p>{{ amount['amount'] }}</p>
                         <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
                              aria-valuetext="{{ project['percent'] }} %" aria-valuemax="100">
                     <span class="progress-meter" style="width: {{ project['percent'] }}%;">
@@ -49,14 +36,10 @@
                     </div>
                 </div>
             {% endfor %}
-        </div>
     </section>
 
     <section id="commentListRequest" class="grid-container">
-
-
                 <h2 class="type-sidelines custom-2"><span>mes derniers commentaires</span></h2>
-
         <div class="grid-x grid-margin-x">
             {% for comment in comments %}
                 <div class="small-6 medium-2 columns">
@@ -68,10 +51,7 @@
     </section>
 
     <section id="commentListRequest" class="grid-container">
-
-
         <h2 class="type-sidelines custom-2"><span>mes derniers projets consultés</span></h2>
-
         <div class="grid-x grid-margin-x">
         </div>
     </section>

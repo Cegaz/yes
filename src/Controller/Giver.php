@@ -21,11 +21,10 @@ class Giver extends AbstractController
         $manager = new CommentManager($db);
         $comments = $manager->getComments();
 
-        /*foreach($projects as $project){
-            $project['collected'] = 2000;
-        }*/
-        return $this->_twig->render('giver.html.twig', ['projects' => $projects, 'comments' => $comments]);
+        $manager = new GiverManager($db);
+        $amounts = $manager->getAmounts();
 
+        return $this->_twig->render('giver.html.twig', ['projects' => $projects, 'comments' => $comments, 'amounts'
+            => $amounts]);
     }
-
 }

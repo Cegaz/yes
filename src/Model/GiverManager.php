@@ -30,7 +30,6 @@ class GiverManager
         ON p.id_project_holder = ph.id
         right JOIN financement f
         ON f.id_project = p.id
-        WHERE p.id = '.$_SESSION['idUser'].'
         GROUP BY f.id_project
         ORDER BY p.dead_line DESC
         LIMIT 4
@@ -56,5 +55,34 @@ class GiverManager
         }
 
         return $projects;
+    }
+
+    public function getAmounts()
+    {
+        $result = $this->db->query('SELECT p.id, p.title, p.short_description, p.date,
+        p.little_picture, p.dead_line,f.amount
+        FROM project p
+        right JOIN financement f
+        ON f.id_project = p.id
+        WHERE f.id_user = '.$_SESSION['idUser'].'
+        LIMIT 0, 3');
+
+        $amounts = [];
+
+
+
+        while($data = $result->fetch()) {
+            $amounts [] =
+            ['id_user' => $data['id'],
+                    'date' => $data['date'],
+                    'amount' => $data['amount'],
+                    'little_picture' => $data['little_picture'],
+                    'dead_line' => $data['dead_line'],
+                    'short_description' => $data['short_description'],
+                    'title' => $data['title']
+                    ];
+        }
+
+        return $amounts;
     }
 }
