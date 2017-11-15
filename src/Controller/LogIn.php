@@ -33,7 +33,7 @@ class LogIn extends AbstractController
     public function logOut()
     {
         session_destroy();
-        return $this->_twig->render('textlogin.html.twig');
+        header('Location:/');
     }
 
     public function session()
