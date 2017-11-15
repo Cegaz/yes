@@ -1,6 +1,9 @@
 /** Header */
 .bold{
     font-weight: bold;
+    background-color: #CCC;
+    border-radius: 10px;
+    padding: 5px;
 }
 header .top-bar input {
     max-width: 120px;

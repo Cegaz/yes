@@ -31,21 +31,28 @@
         </div>
         <div class="top-bar-right">
             <form method="post" action="/login">
-            <ul class="menu">
-                <li id="userName">{{ sess.pseudo }}{{ login }}</li>
+                <ul class="menu">
+                    <li id="userName">{{ sess.pseudo }}
+                        {% if sess.idUser is not defined %}
+                            {{ sess.error }}
+                        {% endif %}</li>
 
-                <li><a href="/monCompte" class="button" id="userSpace">Mon Compte</a></li>
+                    <li><a href="/monCompte" class="button" id="userSpace">Mon Compte</a></li>
 
-                <li><a class="button" href="/espace-porteur" alt="projectHolderSpace">Mes projets</a></li>
+                    <li><a class="button" href="/espace-porteur" alt="projectHolderSpace">Mes projets</a></li>
 
-                <li id="connectInputs">
-                    <input type="text" placeholder="Pseudo"  name="user">
-                    <input type="password" placeholder="Mot de passe"  name="password">
-                </li>
+                    <li id="connectInputs">
+                        <input type="text" placeholder="Pseudo" name="pseudo">
+                        <input type="password" placeholder="Mot de passe" name="password">
+                    </li>
 
-                <li><button type="button" id="button" class="button">Connexion</button></li>
-                <li><button type="button" data-open="openModal" class="button">Inscription</button></li>
-            </ul>
+                    <li>
+                        <button type="button" id="button" class="button">Connexion</button>
+                    </li>
+                    <li>
+                        <button type="button" data-open="openModal" class="button">Inscription</button>
+                    </li>
+                </ul>
             </form>
             <div class="reveal" id="openModal" data-reveal>
                 <form data-abide novalidate method="post" action="/inscription">
@@ -65,7 +72,8 @@
 
                         <div class="input-group"><span class="input-group-label"><i class="fa fa-envelope"></i></span>
                             <input class="input-group-field" type="email" name="email"
-                                   required pattern="^[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$"
+                                   required
+                                   pattern="^[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$"
                                    placeholder="email"/>
                             <span class="form-error"> email requis</span>
                         </div>
@@ -83,8 +91,9 @@
 
                         <div class="input-group"><span class="input-group-label"><i class="fa fa-check"></i></span>
                             <input class="input-group-field" type="checkbox" value="1" name="cgu"/>
-                            <p><a href="https://www.amazon.fr/gp/help/customer/display.html?nodeId=548524#GUID-602FA6E8-D724-4317-89F6-E78834F9BA58__SECTION_E43AAFC78C1543548F6B3D44AC4D5D20"
-                                  target="_blank" >j'accepte les conditions générales d'utilisation</p></a>
+                            <p>
+                                <a href="https://www.amazon.fr/gp/help/customer/display.html?nodeId=548524#GUID-602FA6E8-D724-4317-89F6-E78834F9BA58__SECTION_E43AAFC78C1543548F6B3D44AC4D5D20"
+                                   target="_blank">j'accepte les conditions générales d'utilisation</p></a>
                             <span class="form-error">veuillez validez les conditions</span>
                         </div>
                     </div>
@@ -98,9 +107,11 @@
         </div>
     </div>
     {% if error == true %}
-    <div class="callout warning">
-        <p><button class="button" data-open="openModal">{{ message }}</button></p>
-    </div>
+        <div class="callout warning">
+            <p>
+                <button class="button" data-open="openModal">{{ message }}</button>
+            </p>
+        </div>
     {% endif %}
 
 </header>

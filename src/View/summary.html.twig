@@ -1,0 +1,18 @@
+{#% extends 'oneProject.html.twig' %#}
+{% extends 'form1.html.twig' %}
+
+{% block banner %}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Récapitulatif de votre projet :</h1>
+    <div class="grid-container">
+        <div class="medium-6 cell">
+            <a href="/espace-porteur" class="button">j'enregistre et je complèterai + tard</a>
+            <a href="/depot/publication" class="success button">je publie</a>
+        </div>
+    </div>
+
+    {{ parent }}
+{% endblock %}

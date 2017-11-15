@@ -13,7 +13,6 @@ use Model\DepositManager;
 class Deposit extends AbstractController
 {
     public function index(){
-        // TODO : AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
         return $this->_twig->render('deposit.html.twig');
     }
 
@@ -21,8 +20,11 @@ class Deposit extends AbstractController
         require_once '../app/connect.php';
         $manager = new DepositManager($db);
         $manager->updateStep(0);
-
-        return $this->_twig->render('form1.html.twig');
+        if(isset($_SESSION['idUser'])) {
+            return $this->_twig->render('form1.html.twig');
+        } else {
+            return $this->_twig->render('deposit.html.twig');
+        }
     }
 
     public function form2(){
@@ -106,6 +108,19 @@ class Deposit extends AbstractController
         }
     }
 
+    public function summary(){
+        require_once '../app/connect.php';
+        $manager = new DepositManager($db);
+        $manager->updateDeposit2($_POST['amount'], $_POST['launchDate'],
+            $_POST['deadLine']);
+
+        $manager->updateStep(4);
+
+        return $this->_twig->render('summary.html.twig',
+            ['message' => 'Vos données ont bien été sauvegardées.']);
+
+    }
+
     public function upload_image($file, $pageIfError)
     {
         if($file['littlePicture']['error'] == 2) {
@@ -128,7 +143,7 @@ class Deposit extends AbstractController
         $manager = new DepositManager($db);
         $manager->changeProgress($_SESSION['idProject'], 'en attente de validation');
 
-        header('Location:/espace-porteur');
+       header('Location:/espace-porteur');
     }
 
 }
