@@ -108,6 +108,22 @@ class Deposit extends AbstractController
         }
     }
 
+    public function form5(){
+        require_once '../app/connect.php';
+        $manager = new DepositManager($db);
+        $result = $manager->updateDeposit2($_POST['amount'], $_POST['launchDate'],
+            $_POST['deadLine']);
+
+        if($result) {
+            $manager->updateStep(4);
+            return $this->_twig->render('form5.html.twig',
+                ['message' => 'Vos données ont bien été sauvegardées.']);
+        } else {
+            return $this->_twig->render('form4.html.twig',
+                ['message' => 'Il y a eu une erreur. Veuillez recommencer.']);
+        }
+    }
+
     public function upload_image($file, $pageIfError)
     {
         if($file['littlePicture']['error'] == 2) {
