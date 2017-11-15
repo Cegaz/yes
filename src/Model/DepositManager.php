@@ -107,7 +107,7 @@ class DepositManager
     public function changeProgress($idProject, $progress)
     {
         $prep = $this->db->prepare(
-            'UPDATE projet SET progress = :progress WHERE id = :idProject');
+            'UPDATE project SET progress = :progress WHERE id = :idProject');
         $prep->execute([
             ':progress'=>$progress,
             ':idProject'=>$idProject
