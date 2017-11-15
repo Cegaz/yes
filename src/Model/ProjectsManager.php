@@ -17,7 +17,7 @@ class ProjectsManager
         $this->db = $db;
     }
 
-    public function getProjectsAbstracts($id, $progress, $limit) {
+    public function getProjectsAbstracts($id, $progress, $limit, $start = 0) {
         $queryId="";
         $queryProgress= "";
         $queryLimit="";
@@ -31,7 +31,7 @@ class ProjectsManager
         }
 
         if($limit !== null) {
-            $queryLimit = " LIMIT " . $limit;
+            $queryLimit = " LIMIT " . $start . ',' . $limit ;
         }
 
         $query = 'SELECT p.id, p.title, p.short_description, p.date,
@@ -44,7 +44,9 @@ class ProjectsManager
         right JOIN financement f
         ON f.id_project = p.id' . $queryProgress. $queryId . '
         GROUP BY f.id_project
-        ORDER BY p.dead_line DESC' . $queryLimit . ';';
+        ORDER BY p.dead_line ASC' . $queryLimit . ';';
+
+
 
         $prep = $this->db->prepare($query);
         $prep->bindValue(':progress', $progress);

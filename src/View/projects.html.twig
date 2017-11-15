@@ -1,6 +1,9 @@
 {% extends 'layout.html.twig' %}
+
+
+
 {% block content %}
-    <section id="tagListRequest" class="grid-container">
+   <section id="tagListRequest" class="grid-container">
         <div class="grid-x grid-margin-x">
             <a
                     {% if tag is null %}
@@ -22,12 +25,32 @@
         </div>
     </div>
     </section>
+
     <section id="threeProjects" class="grid-container">
         <div class="grid-x grid-margin-x">
 
     {% for project in projects %}
             {% include 'projectAbstract.html.twig' %}
     {% endfor %}
+        </div>
+        <div class="grid-x grid-margin-x">
+            <div class="small-12 " id="pagination">
+                {% for i in 3..totalPages %}
+
+
+                    {% if i == currentPages %}
+
+
+                    {% elseif i == currentPage + 1 %}
+                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}" class="suivant">page 1</a>
+
+                    {% else %}
+                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}">page {{ i }}</a>
+                    {% endif %}
+
+
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}
