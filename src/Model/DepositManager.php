@@ -72,6 +72,27 @@ class DepositManager
         return $querySuccess;
     }
 
+    public function updateDeposit2($amount, $launchDate, $deadLine)
+    {
+        $launchDate = strtotime($launchDate);
+        $launchDate = date('Y-m-d', $launchDate);
+
+        $deadLine = strtotime($deadLine);
+        $deadLine = date('Y-m-d', $deadLine);
+
+        $prep = $this->db->prepare(
+            'UPDATE project SET amount = :amount, launch_date = :launchDate, dead_line = :deadLine
+            WHERE id = :id');
+        $querySuccess = $prep->execute([
+            ':id'=>$_SESSION['idProject'],
+            ':amount'=>$amount,
+            ':launchDate'=>$launchDate,
+            ':deadLine'=>$deadLine
+        ]);
+
+        return $querySuccess;
+    }
+
     public function updateStep($step)
     {
         $prep = $this->db->prepare(
