@@ -1,7 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block banner %}
-
+    {{ parent() }}
+    {% if sess.idUser is null %}
+        <div class="callout alert">
+            <h5 class="text-center">Vous devez être connecté pour pouvoir déposer un projet.</h5>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}

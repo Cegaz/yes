@@ -13,7 +13,6 @@ use Model\DepositManager;
 class Deposit extends AbstractController
 {
     public function index(){
-        // TODO : AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
         return $this->_twig->render('deposit.html.twig');
     }
 
@@ -21,8 +20,11 @@ class Deposit extends AbstractController
         require_once '../app/connect.php';
         $manager = new DepositManager($db);
         $manager->updateStep(0);
-
-        return $this->_twig->render('form1.html.twig');
+        if(isset($_SESSION['idUser'])) {
+            return $this->_twig->render('form1.html.twig');
+        } else {
+            return $this->_twig->render('deposit.html.twig');
+        }
     }
 
     public function form2(){
