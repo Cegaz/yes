@@ -6,7 +6,9 @@
             <h5 class="text-center">{{ unauthorized }}</h5>
         </div>
     {% else %}
-        <h3>Espace porteur de projet : {{ sess.pseudo }}</h3>
+        <div class="holderSpaceTitle">
+            <h3>Espace porteur de projet : {{ sess.pseudo }}</h3>
+        </div>
 
         {% if projectPreparation %}
             <section id="projectPreparation" class="grid-container">
