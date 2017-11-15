@@ -20,7 +20,6 @@ class DepositManager
 
     public function newProjectHolder($structure_name, $name, $first_name, $phone, $avatar)
     {
-        $_SESSION['idUser'] = 2; // A DÉCOMMENTER DÈS QUE VARIABLE EN PLACE
         $prep = $this->db->prepare(
             'INSERT INTO project_holder(id_user, date, structure_name, name, first_name, phone, avatar)
             VALUES(:id_user, NOW(), :structure_name, :name, :first_name, :phone, :avatar)');
@@ -32,6 +31,7 @@ class DepositManager
             ':phone'=>$phone,
             ':avatar'=>$avatar
         ]);
+
         return $querySuccess;
     }
 

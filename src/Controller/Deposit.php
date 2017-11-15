@@ -13,7 +13,7 @@ use Model\DepositManager;
 class Deposit extends AbstractController
 {
     public function index(){
-        // AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
+        // TODO : AJOUTER SI PROJECT HOLDER DEJA LIÉ À L'USER -> RENVOI VERS ESPACE PP
         return $this->_twig->render('deposit.html.twig');
     }
 
@@ -71,6 +71,7 @@ class Deposit extends AbstractController
 
     public function form4()
     {
+        // TODO : limiter $nbFiles à 3 ?
         $nbFiles = count($_FILES['upload']['name']);
         $pathList = [];
 
@@ -78,16 +79,14 @@ class Deposit extends AbstractController
             if ($_FILES['upload']['error'][$i] == 2) {
                 return $this->_twig->render('form3.html.twig',
                     ['message' => 'Les fichiers sont trop gros (1 Mo max).']);
-                // AJOUTER CONTRAINTE SUR FORMAT FICHIER ?
             } else {
                 $tmpFile = $_FILES['upload']['tmp_name'][$i];
                 $extension = pathinfo($_FILES['upload']['name'][$i])['extension'];
-                $path = '/assets/img/projects/' . $_SESSION['idProject'] . '-' . ($i + 1) .
-                    '.' . $extension;
+                $newFileName = md5_file($_FILES['upload']['tmp_name'][$i]);
+                $path = '/assets/img/projects/' . $newFileName . '.' . $extension;
                 $destination = $_SERVER['DOCUMENT_ROOT'] . $path;
-                // AJOUTER CONDITION SI FICHIER N'EXISTE PAS DÉJÀ
                 if(move_uploaded_file($tmpFile, $destination)){
-                    $pathList[] = $destination;
+                    $pathList[] = $path;
                 }
             }
         }
@@ -115,12 +114,12 @@ class Deposit extends AbstractController
         } else {
             $extension = pathinfo($file['name'])['extension'];
             $newFileName = md5_file($file['tmp_name']);
-            $destination = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/projects/' .
-                $newFileName . '.' . $extension;
+            $path = '/assets/img/projects/' . $newFileName . '.' . $extension;
+            $destination = $_SERVER['DOCUMENT_ROOT'] . $path;
             move_uploaded_file($file['tmp_name'], $destination);
         }
 
-        return $destination;
+        return $path;
     }
 
     public function publish()
@@ -129,7 +128,7 @@ class Deposit extends AbstractController
         $manager = new DepositManager($db);
         $manager->changeProgress($_SESSION['idProject'], 'en attente de validation');
 
-        return $this->_twig->render('projectHolderSpace.html.twig');
+        header('Location:/espace-porteur');
     }
 
 }

@@ -39,12 +39,12 @@ class LogInManager
 
                 } else {
                     return "Identifiants invalides";
+                    // TODO : stocker message dans variable de session
                 }
             } else {
                 return "veuillez remplir tous les champs";
+                // TODO : stocker message dans variable de session
             }
         }
-
-
     }
 }
