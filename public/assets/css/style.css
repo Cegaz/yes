@@ -85,7 +85,11 @@ h2, h3, h4, h5, p {
     font-family: 'Finger Paint', cursive;
     font-size: 3.5em;
 }
-
+#banner h1, #banner h2{
+    text-shadow: 2px 2px 2px #000;
+    position: relative;
+    top: 50px;
+}
 #banner{
     background-image: url('/assets/img/background.jpg');
     background-size: 100%;
@@ -110,8 +114,6 @@ h2, h3, h4, h5, p {
     border-radius: 100%;
 
 }
-/** modal account*/
-
 /* show project : tag list */
 a {
     padding: 3px;
@@ -161,11 +163,26 @@ form h3, .holderSpaceTitle{
     margin-top: 2%;
 }
 .projectHolder{
-    border-radius: 25px;
+    border-radius: 5px;
     width: 50px;
     height: 50px;
 }
-#threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns, #validationWaiting .columns {
+
+
+
+#amountImg {
+    border-radius: 5px;
+    width: 100px;
+    height: 60px;
+}
+
+#moreProject {
+    text-align: center;
+}
+
+
+
+#threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns, #validationWaiting .columns  {
     padding: 1%;
     margin: 1%;
     border: 1px solid #BBB;
@@ -291,12 +308,17 @@ h5{
 /** section Oneproject */
 #oneProject {
     margin-top: 3%;
-    margin-left: 7%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #oneProject {
     text-align: center;
 }
+#oneProject .medium-1 {
+    width: 5px;
+}
+
+
 #oneProject .cible {
     position: relative;
     bottom: 55px;
@@ -314,7 +336,11 @@ h5{
 
 }
 #oneProject .grid-x {
-    padding: 10px;
+width: 105%;
+}
+#oneProject .cell {
+    margin-left: 15px;
+
 }
 #oneProject .cadre {
     background-color: #1779ba;
@@ -327,6 +353,20 @@ border: 1px solid darkgrey;
 
 }
 
+
+
+
+
+#oneProject h2 {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    font-family: 'Finger Paint', cursive;
+    font-size: 3.5em;
+}
+
+
 /* sidebar */
 #oneProject aside{
     position:fixed;
@@ -335,20 +375,37 @@ border: 1px solid darkgrey;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     top:0;
-    right:5%;
+    right:10%;
     z-index:20;
     margin-top: 250px;
     margin-left: 0px;
     text-align: center;
 }
+
 #oneProject aside li{
     list-style: none;
     width: 70px;
     padding-top: 20px;
 }
 
+.blue {
+    background-color: blue;
+}
 
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+
+}
+.purple {
+    background-color: purple;
+
+}
 /* sidebar */
+
 
 /* Project Holder Space */
 

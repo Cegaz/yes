@@ -26,6 +26,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute(['POST','GET'], '/projets/{id}/{titleReplace}', 'showOneProject/index');
     $r->addRoute(['POST', 'GET'], '/depot/recap', 'Deposit/summary');
     $r->addRoute(['POST', 'GET'], '/depot/publication', 'Deposit/publish');
+    $r->addRoute('GET', '/{page:\d+}', 'Projects/index');
 });
 
 // Fetch method and URI from somewhere

@@ -24,22 +24,32 @@
 
     <section id="threeProjects" class="grid-container">
         <div class="grid-x grid-margin-x">
-
             {% for project in projects %}
                 {% include 'projectAbstract.html.twig' %}
             {% endfor %}
         </div>
-        <div class="grid-x grid-margin-x">
-            <div class="small-12 " id="pagination">
-                {% for i in 3..totalPages %}
-                    {% if i == currentPages %}
-                    {% elseif i == currentPage + 1 %}
-                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}#tagListRequest" class="suivant">page 1</a>
-                    {% else %}
-                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}#tagListRequest">page {{ i }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
+
+
+        <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+            {% for i in 1..nbPages %}
+                {% if i == 1 and numPage == 1 %}
+                    <li class="pagination-previous disabled">Précédente</li>
+                {% elseif i == 1 %}
+                    <li class="pagination-previous"><a href="/{{ i }}" aria-label="Previous page">Précédente</a></li>
+                {% endif %}
+
+                {% if i == numPage %}
+                    <li class="current"><span class="show-for-sr">You're on page</span>{{ numPage }}</li>
+                {% else %}
+                    <li><a href="/{{ i }}" aria-label="Page {{ i }}">{{ i }}</a></li>
+                {% endif %}
+
+                {% if i == nbPages and numPage == nbPages%}
+                    <li class="pagination-previous disabled">Suivante</li>
+                {% elseif i == nbPages %}
+                    <li class="pagination-next"><a href="/{{ i }}" aria-label="Next page">Suivante</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
     </section>
 {% endblock %}

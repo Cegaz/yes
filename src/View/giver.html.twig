@@ -15,7 +15,7 @@
                     <h5>le  {{ amount['date']|date("d-m-Y") }}</h5>
                     <h5>sur le projet : {{ amount['title'] }}</h5>
                     <h5>{{ amount['short_description'] }}</h5>
-                    <img class="projectHolder" src="{{ amount['little_picture'] }}">
+                    <img class="projectHolder" id="amountImg" src="{{ amount['little_picture'] }}">
                 </div>
             {% endfor %}
             </div>
@@ -38,7 +38,9 @@
                             </div>
                             <p class="text-right">{{ project['collected'] }}€ / {{ project['amount'] }}€</br>
                                 {{ project['time_left'] }} j restants</p>
-                            <p>par {{ project['first_name'] }} {{ project['name'] }} <img class="projectHolder" src="{{ project['avatar'] }}"></p>
+                            <p id="moreProject">par  {{ project['first_name'] }}  {{ project['name'] }} <img
+                                        class="projectHolder"
+                                                                                           src="{{ project['avatar'] }}"></p>
                         </div>
                     </div>
                 {% endfor %}
@@ -53,12 +55,6 @@
                         <i>" {{ comment['comment'] }} "</i>
                     </div>
                 {% endfor %}
-            </div>
-        </section>
-
-        <section id="commentListRequest" class="grid-container">
-            <h2 class="type-sidelines custom-2"><span>mes derniers projets consultés</span></h2>
-            <div class="grid-x grid-margin-x">
             </div>
         </section>
     {% endif %}
