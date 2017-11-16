@@ -65,6 +65,7 @@ footer {
     margin-left: 0;
     margin-right:0;
     background-color: darkgrey;
+    margin-top: 60px;
 }
 
 footer > div > ul > li > a {
