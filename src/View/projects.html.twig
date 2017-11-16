@@ -1,5 +1,3 @@
-{% extends 'layout.html.twig' %}
-
 {% block content %}
     <section id="tagListRequest" class="grid-container">
         <div class="grid-x grid-margin-x">
@@ -7,13 +5,13 @@
                     {% if tag is null %}
                         class="bold"
                     {% endif %}
-                    href="/projets" alt="projets" type="button">tous les projets</a>
+                    href="/projets#tagListRequest" alt="projets">tous les projets</a>
             {% for taggy in tags %}
                 {% for value in taggy %}
                     <a {% if value == tag %}
                         class="bold"
                     {% endif %}
-                            href="/tag/{{ value }}" alt="{{ value }}" type="button">{{ value }}</a>
+                            href="/tag/{{ value }}#tagListRequest" alt="{{ value }}">{{ value }}</a>
                 {% endfor %}
             {% endfor %}
             <div>
