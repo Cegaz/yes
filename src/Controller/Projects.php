@@ -31,4 +31,6 @@ class Projects extends AbstractController
 
         return $this->_twig->render('projects.html.twig', ['projects' => $projects, 'tags' => $results]);
     }
+
+
 }

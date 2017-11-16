@@ -58,6 +58,8 @@ class ProjectsManager
             $date2 = strtotime($data['dead_line']);
 
             $projects[] =  ['title' => $data['title'],
+                'id'=> $data['id_project'],
+                'titleReplace' => str_replace(' ','-',$data['title']),
                 'short_description' => $data['short_description'],
                 'little_picture' => $data['little_picture'],
                 'amount' => $data['amount'],
@@ -102,4 +104,5 @@ class ProjectsManager
         }
         return $projects;
     }
+
 }

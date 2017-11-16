@@ -64,7 +64,9 @@ $projectsWithThisTag = $this->db->query("SELECT ltp.id_project, ltp.id_tag, t.id
             $date2 = strtotime($data['dead_line']);
 
             $projects[] =  ['title' => $data['title'],
+                'id' => $data['id'],
                 'short_description' => $data['short_description'],
+                'titleReplace' => str_replace(' ','-',$data['title']),
                 'little_picture' => $data['little_picture'],
                 'amount' => $data['amount'],
                 'dead_line' => $data['dead_line'],

@@ -72,6 +72,7 @@ footer > div > ul > li > a {
 }
 
 /** banner */
+
 h1, h2 {
     text-align: center;
     padding: 30px;
@@ -270,3 +271,62 @@ h5{
 .custom-2 span:after {
     left: 100%;
 }
+/** end span */
+
+#deposit-button{
+    text-align: center;
+    margin-top: 100px;
+}
+
+/** section Oneproject */
+#oneProject {
+    margin-top: 3%;
+}
+#oneProject {
+    text-align: center;
+}
+#oneProject .cible {
+    position: relative;
+    bottom: 55px;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+#oneProject .resize {
+    max-width:400px;
+    height: auto;
+
+}
+#oneProject .left {
+    text-align: left;
+
+}
+#oneProject .grid-x {
+    padding: 10px;
+}
+#oneProject .cadre {
+    background-color: #1779ba;
+    font-size: 1.2em;
+    color:white;
+}
+
+/* sidebar */
+#oneProject aside{
+    position:fixed;
+    background-color: black;
+    opacity : 0.7;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    top:0;
+    right:0;
+    z-index:20;
+    margin-top: 250px;
+    margin-left: 0px;
+    text-align: center;
+}
+#oneProject aside li{
+    list-style: none;
+    width: 70px;
+    padding-top: 20px;
+}
+/* sidebar */
+
