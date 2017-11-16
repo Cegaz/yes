@@ -20,8 +20,7 @@ class Projects extends AbstractController
         //$progress = 'en financement';
 
         if(isset($_GET['page']) && $_GET['page'] > 1){
-            $limit = 3 * $_GET['page'];
-            $start = $limit - 3;
+            $start = 3 * $_GET['page'];
         }
 
         $manager = new ProjectsManager($db);
@@ -29,6 +28,6 @@ class Projects extends AbstractController
         $tags = new TagsManager($db);
         $results = $tags->listTags();
 
-        return $this->_twig->render('projects.html.twig', ['projects' => $projects, 'tags' => $results]);
+        return $this->_twig->render('home.html.twig', ['projects' => $projects, 'tags' => $results]);
     }
 }

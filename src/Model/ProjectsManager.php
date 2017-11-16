@@ -48,6 +48,8 @@ class ProjectsManager
         GROUP BY f.id_project
         ORDER BY p.dead_line ASC' . $queryLimit . ';';
 
+
+
         $prep = $this->db->prepare($query);
         $prep->bindValue(':progress', $progress);
         $prep->execute();

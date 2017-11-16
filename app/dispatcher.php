@@ -8,7 +8,7 @@
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', 'Home/index');
+    $r->addRoute('GET', '/', 'Projects/index');
     $r->addRoute('POST', '/login', 'LogIn/logIn');
     $r->addRoute('GET', '/logout', 'LogIn/logOut');
     $r->addRoute('GET', '/session', 'LogIn/session');
