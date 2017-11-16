@@ -49,7 +49,6 @@ class ProjectsManager
         ORDER BY p.dead_line ASC' . $queryLimit . ';';
 
 
-
         $prep = $this->db->prepare($query);
         $prep->bindValue(':progress', $progress);
         $prep->execute();

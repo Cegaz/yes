@@ -20,7 +20,7 @@ class Projects extends AbstractController
         //$progress = 'en financement';
 
         if(isset($_GET['page']) && $_GET['page'] > 1){
-            $start = 3 * $_GET['page'];
+            $start = 3 * ($_GET['page'] - 1);
         }
 
         $manager = new ProjectsManager($db);
