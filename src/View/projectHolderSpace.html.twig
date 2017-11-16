@@ -6,13 +6,13 @@
             <h5 class="text-center">{{ unauthorized }}</h5>
         </div>
     {% else %}
-        <div class="holderSpaceTitle">
-            <h3>Espace porteur de projet : {{ sess.pseudo }}</h3>
+       <div class="holderSpaceTitle">
+            <h1 class="text-center">Espace porteur de projet de {{ sess.pseudo }}</h1>
         </div>
 
         {% if projectPreparation %}
             <section id="projectPreparation" class="grid-container">
-                <h2 class="type-sidelines custom-2"><span>projets en cours de préparation</span></h2>
+                <h2 class="type-sidelines custom-2"><span>Projets en cours de préparation</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in projectPreparation %}
                         {% include 'projectAbstract.html.twig' %}
@@ -22,8 +22,8 @@
         {% endif %}
 
         {% if validationWaiting %}
-            <section id="published" class="grid-container">
-                <h2>Projets en attente de validation</h2>
+            <section id="validationWaiting" class="grid-container">
+                <h2 class="type-sidelines custom-2"><span>Projets en attente de validation</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in validationWaiting %}
                         {% include 'projectAbstract.html.twig' %}
@@ -34,7 +34,7 @@
 
         {% if published %}
             <section id="published" class="grid-container">
-                <h2>Projets publiés</h2>
+                <h2 class="type-sidelines custom-2"><span>Projets publiés</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in published %}
                         {% include 'projectAbstract.html.twig' %}
@@ -45,7 +45,7 @@
 
         {% if financing %}
             <section id="financing" class="grid-container">
-                <h2>Projets en cours de financement</h2>
+                <h2 class="type-sidelines custom-2"><span>Projets en cours de financement</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in financing %}
                         {% include 'projectAbstract.html.twig' %}
@@ -56,7 +56,7 @@
 
         {% if closed %}
             <section id="closed" class="grid-container">
-                <h2>Projets terminés</h2>
+                <h2 class="type-sidelines custom-2"><span>Projets terminés</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in closed %}
 

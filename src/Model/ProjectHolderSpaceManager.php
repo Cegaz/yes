@@ -27,6 +27,7 @@ class ProjectHolderSpaceManager
                         WHERE u.id = $id";
         $result = $this->db->query($queryHolder);
         $datas = $result->fetch(\PDO::FETCH_OBJ);
+
         return $datas;
     }
 }
