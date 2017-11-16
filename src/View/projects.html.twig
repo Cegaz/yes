@@ -34,9 +34,9 @@
                 {% for i in 3..totalPages %}
                     {% if i == currentPages %}
                     {% elseif i == currentPage + 1 %}
-                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}" class="suivant">page 1</a>
+                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}#tagListRequest" class="suivant">page 1</a>
                     {% else %}
-                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}">page {{ i }}</a>
+                        <a href="{{ WEBROOT }}{{ condition_pagination }}?page={{ i }}#tagListRequest">page {{ i }}</a>
                     {% endif %}
                 {% endfor %}
             </div>
