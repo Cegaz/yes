@@ -24,6 +24,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute(['POST', 'GET'], '/depot/form4', 'Deposit/form4');
     $r->addRoute(['POST', 'GET'], '/depot/form5', 'Deposit/form5');
     $r->addRoute('GET', '/depot/publication', 'Deposit/publish');
+    $r->addRoute(['POST','GET'], '/projets/{id}/{titleReplace}', 'showOneProject/index');
 
 });
 
