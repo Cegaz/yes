@@ -31,8 +31,9 @@ class ProjectsManager
         }
 
         if($limit !== null) {
-            $queryLimit = " LIMIT " . $start . ',' . $limit ;
+            $queryLimit = " LIMIT " . $start . ', ' . $limit ;
         }
+
 
         $query = 'SELECT p.id, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
@@ -45,7 +46,6 @@ class ProjectsManager
         ON f.id_project = p.id ' . $queryProgress. $queryId . '
         WHERE p.dead_line > NOW()
         GROUP BY f.id_project
-
         ORDER BY p.dead_line ASC' . $queryLimit . ';';
 
         $prep = $this->db->prepare($query);
