@@ -19,11 +19,13 @@ class Projects extends AbstractController
         $start = 0;
         //$progress = 'en financement';
 
+
        if(isset($page) && $page > 1){
            $start = 3 * ($page - 1);
        } else{
            $page = 1;
        }
+
 
         $manager = new ProjectsManager($db);
         $projects = $manager->getProjectsAbstracts(null, null, $limit, $start);
