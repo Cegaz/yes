@@ -105,8 +105,6 @@ h1, h2 {
     border-radius: 100%;
 
 }
-/** modal account*/
-
 /* show project : tag list */
 a {
     padding: 3px;
@@ -156,10 +154,24 @@ form h3, .holderSpaceTitle{
     margin-top: 2%;
 }
 .projectHolder{
-    border-radius: 25px;
+    border-radius: 5px;
     width: 50px;
     height: 50px;
 }
+    
+
+#amountImg {
+    border-radius: 5px;
+    width: 100px;
+    height: 60px;
+}
+
+#moreProject {
+    text-align: center;
+}
+
+
+
 #threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns {
     padding: 1%;
     margin: 1%;
@@ -357,6 +369,7 @@ border: 1px solid darkgrey;
     margin-left: 0px;
     text-align: center;
 }
+
 #oneProject aside li{
     list-style: none;
     width: 70px;
@@ -380,4 +393,5 @@ border: 1px solid darkgrey;
 
 }
 /* sidebar */
+
 
