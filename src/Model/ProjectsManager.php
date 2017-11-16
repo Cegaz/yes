@@ -35,9 +35,9 @@ class ProjectsManager
         }
 
 
-        $query = 'SELECT p.id, p.title, p.short_description, p.date,
+        $query = 'SELECT p.id AS id_project, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
-        ph.first_name, ph.name, ph.avatar, ph.id,
+        ph.first_name, ph.name, ph.avatar, ph.id ,
         SUM(f.amount) AS collected, f.id_project
         FROM project p
         JOIN project_holder ph
@@ -74,9 +74,9 @@ class ProjectsManager
         }
 
         if (empty($projects)) {
-            $query = 'SELECT p.id, p.title, p.short_description, p.date,
+            $query = 'SELECT p.id AS id_project, p.title, p.short_description, p.date,
         p.little_picture, p.amount, p.dead_line, p.id_project_holder,
-        ph.first_name, ph.name, ph.avatar, ph.id
+        ph.first_name, ph.name, ph.avatar, ph.id 
         FROM project p
         JOIN project_holder ph
         ON p.id_project_holder = ph.id' . $queryProgress. $queryId . '
@@ -90,6 +90,8 @@ class ProjectsManager
                 $date2 = strtotime($data['dead_line']);
 
                 $projects[] =  ['title' => $data['title'],
+                    'id'=> $data['id_project'],
+                    'titleReplace' => str_replace(' ','-',$data['title']),
                     'short_description' => $data['short_description'],
                     'little_picture' => $data['little_picture'],
                     'amount' => $data['amount'],
@@ -102,6 +104,7 @@ class ProjectsManager
             }
 
         }
+
         return $projects;
     }
 
