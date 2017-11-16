@@ -86,7 +86,7 @@ h1, h2 {
 #banner{
     background-image: url('/assets/img/background.jpg');
     background-size: 100%;
-    height: 450px;
+    height: 90vh;
     color: #FFF;
     opacity: .8;
 }
@@ -138,6 +138,9 @@ form .form-icons .fa {
     background-color: #DDD;
 }
 /** */
+
+
+
 h3{
     font-family: 'Lato', sans-serif;
     font-size: 1.5em;
@@ -174,8 +177,9 @@ form h3, .holderSpaceTitle{
     margin: 1%;
     border: 1px solid #BBB;
 }
-#threeProjects .thumbnail{
-    margin-top: 3%;
+.thumbnail{
+   margin-left: -3%;
+   margin-top: 3%;
 }
 
 
@@ -294,10 +298,17 @@ h5{
 /** section Oneproject */
 #oneProject {
     margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #oneProject {
     text-align: center;
 }
+#oneProject .medium-1 {
+    width: 5px;
+}
+
+
 #oneProject .cible {
     position: relative;
     bottom: 55px;
@@ -305,7 +316,8 @@ h5{
     font-size: 1.4em;
 }
 #oneProject .resize {
-    max-width:400px;
+    max-width:350px;
+    max-height: 350px;
     height: auto;
 
 }
@@ -314,13 +326,34 @@ h5{
 
 }
 #oneProject .grid-x {
-    padding: 10px;
+width: 105%;
+}
+#oneProject .cell {
+    margin-left: 15px;
+
 }
 #oneProject .cadre {
     background-color: #1779ba;
     font-size: 1.2em;
     color:white;
 }
+
+#oneProject .grid-container {
+border: 1px solid darkgrey;
+
+}
+
+
+
+#oneProject h2 {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    font-family: 'Finger Paint', cursive;
+    font-size: 3.5em;
+}
+
 
 /* sidebar */
 #oneProject aside{
@@ -330,7 +363,7 @@ h5{
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     top:0;
-    right:0;
+    right:10%;
     z-index:20;
     margin-top: 250px;
     margin-left: 0px;
@@ -341,6 +374,23 @@ h5{
     list-style: none;
     width: 70px;
     padding-top: 20px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+
+}
+.purple {
+    background-color: purple;
+
 }
 /* sidebar */
 
