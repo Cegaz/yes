@@ -103,9 +103,8 @@ class ProjectsManager
                     'time_left' => round(($date2 - $date1)/3600/24),
                 ];
             }
-
         }
-
+        
         return $projects;
     }
 
