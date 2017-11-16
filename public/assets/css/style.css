@@ -82,7 +82,11 @@ h1, h2 {
     font-family: 'Finger Paint', cursive;
     font-size: 3.5em;
 }
-
+#banner h1, #banner h2{
+    text-shadow: 2px 2px 2px #000;
+    position: relative;
+    top: 50px;
+}
 #banner{
     background-image: url('/assets/img/background.jpg');
     background-size: 100%;
