@@ -1,4 +1,13 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+#main{
+    min-height: 100vh;
+}
 /** Header */
+header{
+    box-shadow: 5px 5px 5px #AAA;
+}
 .bold{
     font-weight: bold;
     background-color: #CCC;
@@ -8,11 +17,29 @@
 header .top-bar input {
     max-width: 120px;
 }
-.menu > li:first-child{
+input .input-group-field{
+    width: 50%;
+}
+#responsive-menu, header .menu, .top-bar ul{
+    background-color: #FFF;
+}
+.menu a{
+    color: #555;
+}
+header .menu > li:first-child{
     font-size:1.2em;
     font-weight: bold;
 }
-
+.menu .button{
+    background-color: #BBB;
+    color: #FFF;
+}
+.mini-field{
+    max-width: 30px;
+}
+.input-group-field{
+    align-content: center;
+}
 header .callout p {
     text-align: center;
 }
@@ -22,17 +49,23 @@ header .callout button {
     color: black;
     font-weight: bold;
 }
-
+.callout.alert{
+    background-color: #FF9436;
+}
 #userName {
     margin : 8px;
   }
+
+.menu li{
+    margin-left: 5px;
+}
 
 /** Footer*/
 footer {
     margin-left: 0;
     margin-right:0;
-    margin-top: 60px;
     background-color: darkgrey;
+    margin-top: 60px;
 }
 
 footer > div > ul > li > a {
@@ -40,14 +73,22 @@ footer > div > ul > li > a {
 }
 
 /** banner */
+
 h1, h2 {
     text-align: center;
     padding: 30px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    font-family: 'Finger Paint', cursive;
+    font-size: 3.5em;
 }
 
-#titleBanner  {
-    background-color: #1d81ff;
-    color: whitesmoke;
+#banner{
+    background-image: url('/assets/img/background.jpg');
+    background-size: 100%;
+    height: 450px;
+    color: #FFF;
+    opacity: .8;
 }
 
 #homeProjectButton {
@@ -64,12 +105,11 @@ h1, h2 {
     border-radius: 100%;
 
 }
-/** modal account*/
-
 /* show project : tag list */
 a {
     padding: 3px;
     margin: 5px;
+    color: #444;
 }
 
 /* show project */
@@ -82,12 +122,11 @@ form .form-icons h4 {
 }
 
 form .form-icons .input-group-label {
-    background-color: #1779ba;
-    border-color: #1779ba;
+    background-color: #1779BA;
+    border-color: #1779BA;
 }
-
 form .form-icons .input-group-field {
-    border-color: #1779ba;
+    border-color: #1779BA;
 }
 
 form .form-icons .fa {
@@ -95,19 +134,41 @@ form .form-icons .fa {
     width: 1rem;
 }
 
+.columns:hover{
+    background-color: #DDD;
+}
 /** */
 h3{
+    font-family: 'Lato', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
+    color: #555;
+}
+form h3, .holderSpaceTitle{
+    margin: 30px;
 }
 .grid-container{
     margin-top: 2%;
 }
 .projectHolder{
-    border-radius: 25px;
+    border-radius: 5px;
     width: 50px;
     height: 50px;
 }
+    
+
+#amountImg {
+    border-radius: 5px;
+    width: 100px;
+    height: 60px;
+}
+
+#moreProject {
+    text-align: center;
+}
+
+
+
 #threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns {
     padding: 1%;
     margin: 1%;
@@ -138,7 +199,55 @@ h3{
     text-align: center;
 }
 
+/** forms */
+#deposit{
+    margin: 15px;
+    color: #444;
+}
+[type="text"]{
+    width: 50%;
+}
+[type="tel"], [type="number"], [type="date"]{
+    width: 25%;
+}
+h5{
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+.button{
+    border-radius: 5px;
+}
+.callout.success, .button.success{
+    background-color: #A1D490;
+}
+.button:hover{
+    box-shadow: 2px 2px 2px #444;
+}
+.button.success:hover{
+    background-color: #A1D490;
+}
 
+#deposit-button{
+    text-align: center;
+    margin-top: 40px;
+}
+#deposit > p{
+    margin: 30px;
+}
+#tutos{
+    text-align: center;
+    margin-top: 40px;
+}
+#tutos img{
+    height: 60px;
+}
+#tutos img:hover{
+    position: relative;
+    bottom: 20px;
+}
+#tutos a{
+    margin: 30px;
+}
 
 /** span */
 .custom-2 {
@@ -175,95 +284,64 @@ h3{
 .custom-2 span:after {
     left: 100%;
 }
-
-
-
 /** end span */
-
 
 #deposit-button{
     text-align: center;
     margin-top: 100px;
 }
 
-
-.pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
-    position: relative;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
+/** section Oneproject */
+#oneProject {
+    margin-top: 3%;
+}
+#oneProject {
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    background-color: #2c3840;
-    color: #fff;
-    outline: 0;
-    text-decoration: none;
-    transition: all 0.2s linear;
+}
+#oneProject .cible {
+    position: relative;
+    bottom: 55px;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+#oneProject .resize {
+    max-width:400px;
+    height: auto;
+
+}
+#oneProject .left {
+    text-align: left;
+
+}
+#oneProject .grid-x {
+    padding: 10px;
+}
+#oneProject .cadre {
+    background-color: #1779ba;
+    font-size: 1.2em;
+    color:white;
 }
 
-.pagination-pointed .pagination-pointed-button:hover, .pagination-pointed .current:hover, .pagination-pointed .pagination-previous:hover {
-    background-color: #41525e;
+/* sidebar */
+#oneProject aside{
+    position:fixed;
+    background-color: black;
+    opacity : 0.7;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    top:0;
+    right:0;
+    z-index:20;
+    margin-top: 250px;
+    margin-left: 0px;
+    text-align: center;
 }
 
-.pagination-pointed .current {
-    background: dodgerblue;
+#oneProject aside li{
+    list-style: none;
+    width: 70px;
+    padding-top: 20px;
 }
-
-.pagination-pointed .current:hover {
-    background-color: #0077ea;
-}
-
-.pagination-pointed .pagination-next a {
-    border-radius: 4px 0 0 4px;
-    margin-right: 18px;
-}
-
-.pagination-pointed .pagination-next a:hover::after {
-    border-left: 17px solid #41525e;
-}
-
-.pagination-pointed .pagination-next a::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -18px;
-    width: 0;
-    height: 0;
-    border-top: 17px solid transparent;
-    border-bottom: 17px solid transparent;
-    border-left: 17px solid #2c3840;
-    transition: all 0.2s linear;
-}
-
-.pagination-pointed .pagination-previous {
-    border-radius: 0 4px 4px 0;
-    margin-left: 18px;
-}
-
-.pagination-pointed .pagination-previous:hover::after {
-    border-right: 17px solid #41525e;
-}
-
-.pagination-pointed .pagination-previous::before {
-    content: "";
-}
-
-.pagination-pointed .pagination-previous::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -18px;
-    width: 0;
-    height: 0;
-    border-bottom: 17px solid transparent;
-    border-top: 17px solid transparent;
-    border-right: 17px solid #b2bdba;
-    transition: all 0.2s linear;
-}
+/* sidebar */
 
 

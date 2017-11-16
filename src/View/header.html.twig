@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Finger+Paint" rel="stylesheet">
 
     <title>Oui Project</title>
 </head>
@@ -22,11 +23,8 @@
         <div class="top-bar-left ">
             <ul class="menu">
                 <li><a href="/" alt="accueil">Ouiproject !</a></li>
-                <li><a href="#" alt="notre mission">Notre mission</a></li>
                 <li><a href="/depot" alt="financer son projet">Financer son projet</a></li>
-                <li><a href="#" alt="soutenir un projet">Soutenir un projet</a></li>
-                <li><input type="search" placeholder="Search"></li>
-
+                <li><a href="#tagListRequest" alt="soutenir un projet">Soutenir un projet</a></li>
             </ul>
         </div>
         <div class="top-bar-right">
@@ -62,12 +60,12 @@
                         <p><i class="fi-alert"></i>les informations entrées sont incorrectes</p>
                     </div>
                     <div class="form-icons">
-                        <h4>inscription Oui-project</h4>
+                        <h3>formulaire d'inscription</h3>
 
                         <div class="input-group"><span class="input-group-label"><i class="fa fa-user"></i></span>
-                            <span class="form-error">pseudo requis</span>
                             <input class="input-group-field" type="text" name="pseudo" placeholder="pseudo" required
-                                   pattern="[a-zA-Z]+"/>
+                            pattern="[a-zA-Z]+"/>
+                            <span class="form-error">pseudo requis</span>
                         </div>
 
                         <div class="input-group"><span class="input-group-label"><i class="fa fa-envelope"></i></span>
@@ -90,14 +88,14 @@
                         </div>
 
                         <div class="input-group"><span class="input-group-label"><i class="fa fa-check"></i></span>
-                            <input class="input-group-field" type="checkbox" value="1" name="cgu"/>
+                            <input class="input-group-field mini-field" type="checkbox" value="1" name="cgu"/>
                             <p>
                                 <a href="https://www.amazon.fr/gp/help/customer/display.html?nodeId=548524#GUID-602FA6E8-D724-4317-89F6-E78834F9BA58__SECTION_E43AAFC78C1543548F6B3D44AC4D5D20"
                                    target="_blank">j'accepte les conditions générales d'utilisation</p></a>
                             <span class="form-error">veuillez validez les conditions</span>
                         </div>
                     </div>
-                    <button class="button expanded">Valider</button>
+                    <button class="button expanded">je valide</button>
                 </form>
 
                 <button class="close-button" data-close aria-label="Close modal" type="button">
@@ -115,3 +113,4 @@
     {% endif %}
 
 </header>
+<div id="main">

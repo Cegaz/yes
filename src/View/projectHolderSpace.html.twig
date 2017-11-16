@@ -6,11 +6,13 @@
             <h5 class="text-center">{{ unauthorized }}</h5>
         </div>
     {% else %}
-        <h1>Espace porteur de projet : {{ sess.pseudo }}</h1>
+        <div class="holderSpaceTitle">
+            <h3>Espace porteur de projet : {{ sess.pseudo }}</h3>
+        </div>
 
         {% if projectPreparation %}
             <section id="projectPreparation" class="grid-container">
-                <h2>Projets en cours de préparation</h2>
+                <h2 class="type-sidelines custom-2"><span>projets en cours de préparation</span></h2>
                 <div class="grid-x grid-margin-x">
                     {% for project in projectPreparation %}
                         {% include 'projectAbstract.html.twig' %}

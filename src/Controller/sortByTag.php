@@ -22,7 +22,7 @@ class sortByTag extends AbstractController
         $tags = new TagsManager($db);
         $results = $tags->listTags();
 
-        return $this->_twig->render('projects.html.twig', ['tag' => $tag, 'projects' => $projects, 'tags' => $results]);
+        return $this->_twig->render('home.html.twig', ['tag' => $tag, 'projects' => $projects, 'tags' => $results]);
     }
 
 }

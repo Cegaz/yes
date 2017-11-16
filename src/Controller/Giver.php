@@ -13,18 +13,25 @@ use Model\CommentManager;
 class Giver extends AbstractController
 {
     public function index(){
-        require_once '../app/connect.php';
 
-        $manager = new GiverManager($db);
-        $projects = $manager->get3Projects();
+        if(isset($_SESSION['idUser'])) {
 
-        $manager = new CommentManager($db);
-        $comments = $manager->getComments();
+            require_once '../app/connect.php';
 
-        $manager = new GiverManager($db);
-        $amounts = $manager->getAmounts();
+            $manager = new GiverManager($db);
+            $projects = $manager->get3Projects();
 
-        return $this->_twig->render('giver.html.twig', ['projects' => $projects, 'comments' => $comments, 'amounts'
-            => $amounts]);
+            $manager = new CommentManager($db);
+            $comments = $manager->getComments();
+
+            $manager = new GiverManager($db);
+            $amounts = $manager->getAmounts();
+
+        } else {
+            $unauthorized = true;
+        }
+
+        return $this->_twig->render('giver.html.twig', ['unauthorized' => $unauthorized, 'projects' => $projects, 'comments' => $comments, 'amounts'
+        => $amounts]);
     }
 }
