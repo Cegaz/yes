@@ -281,6 +281,8 @@ h5{
 /** section Oneproject */
 #oneProject {
     margin-top: 3%;
+    margin-left: 7%;
+    margin-right: 5%;
 }
 #oneProject {
     text-align: center;
@@ -292,7 +294,8 @@ h5{
     font-size: 1.4em;
 }
 #oneProject .resize {
-    max-width:400px;
+    max-width:350px;
+    max-height: 350px;
     height: auto;
 
 }
@@ -309,6 +312,11 @@ h5{
     color:white;
 }
 
+#oneProject .grid-container {
+border: 1px solid darkgrey;
+
+}
+
 /* sidebar */
 #oneProject aside{
     position:fixed;
@@ -317,7 +325,7 @@ h5{
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     top:0;
-    right:0;
+    right:5%;
     z-index:20;
     margin-top: 250px;
     margin-left: 0px;
@@ -328,5 +336,7 @@ h5{
     width: 70px;
     padding-top: 20px;
 }
+
+
 /* sidebar */
 
