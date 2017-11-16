@@ -72,9 +72,12 @@ footer > div > ul > li > a {
     color: black;
 }
 
+h2, h3, h4, h5, p {
+    font-family: 'Raleway', sans-serif;
+}
 /** banner */
 
-h1, h2 {
+#banner h1, #banner h2 {
     text-align: center;
     padding: 30px;
     font-family: 'Lato', sans-serif;
@@ -86,10 +89,12 @@ h1, h2 {
 #banner{
     background-image: url('/assets/img/background.jpg');
     background-size: 100%;
-    height: 450px;
+    height: 80vh;
     color: #FFF;
     opacity: .8;
 }
+
+
 
 #homeProjectButton {
     text-align: center;
@@ -160,7 +165,7 @@ form h3, .holderSpaceTitle{
     width: 50px;
     height: 50px;
 }
-#threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns {
+#threeProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns, #validationWaiting .columns {
     padding: 1%;
     margin: 1%;
     border: 1px solid #BBB;
@@ -345,3 +350,30 @@ border: 1px solid darkgrey;
 
 /* sidebar */
 
+/* Project Holder Space */
+
+.holderSpaceTitle {
+    padding: 12vh;
+    background-size: cover;
+    background-attachment: fixed;
+    color: blue;
+    text-shadow: 1px 1px black;
+    margin : 0;
+}
+
+.holderSpaceTitle > h1 {
+    font-family: 'Finger Paint', cursive;
+    color: #FFFFFF;
+}
+
+
+section> div > div  {
+    background-color: #FFFFFF;
+}
+
+.holderSpaceTitle ~ .grid-container {
+    background-image: url("/assets/img/seigaiha.png");
+    padding: 5%;
+    margin-top: 0px;
+    box-shadow: 1px 1px 5px #555555;
+}
