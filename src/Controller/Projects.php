@@ -15,9 +15,17 @@ class Projects extends AbstractController
 {
     public function index(){
         require_once '../app/connect.php';
+        $limit = 3;
+        $start = 0;
+        //$progress = 'en financement';
+
+        if(isset($_GET['page']) && $_GET['page'] > 1){
+            $limit = 3 * $_GET['page'];
+            $start = $limit - 3;
+        }
 
         $manager = new ProjectsManager($db);
-        $projects = $manager->getProjectsAbstracts(null, null, 3);
+        $projects = $manager->getProjectsAbstracts(null, null, $limit, $start);
         $tags = new TagsManager($db);
         $results = $tags->listTags();
 

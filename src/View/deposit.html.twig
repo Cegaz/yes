@@ -1,11 +1,34 @@
 {% extends 'layout.html.twig' %}
 
 {% block banner %}
-
+    {{ parent() }}
+    {% if sess.idUser is null %}
+        <div class="callout alert">
+            <h5 class="text-center">Vous devez être connecté pour pouvoir déposer un projet.</h5>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
+    <div id="deposit">
+        <p>Cher porteur de projet, bienvenue !</p>
+        <p>Si vous êtes là, c’est que vous vous apprêtez à remplir le formulaire de présentation
+            de votre projet et nous souhaitons vous remercier pour votre confiance.</p>
+        <p>Ce formulaire de demande vous guidera pas à pas dans la présentation de votre projet.
+            Il est composé de 4 étapes permettant de vous présenter, de présenter votre structure et
+            votre projet, et de choisir les modalités de votre campagne de crowdfunding.</p>
+        <p>Vous trouverez sur cette page quelques tutoriels destinés à vous aider dans cette démarche.</p>
+    </div>
+
     <div id="deposit-button">
         <a href="/depot/form1"><button type="button" id="button" class="button">Je dépose mon projet</button></a>
+    </div>
+
+    <div id="tutos">
+        <a href="https://www.youtube.com/watch?v=29gSYy7niPI&t=9s"><img src="/assets/img/like.png"></a>
+        <a href="https://www.youtube.com/watch?v=29gSYy7niPI&t=9s"><img src="/assets/img/diapo.png"></a>
+        <a href="https://www.youtube.com/watch?v=29gSYy7niPI&t=9s"><img src="/assets/img/param.png"></a>
+        <a href="https://www.youtube.com/watch?v=29gSYy7niPI&t=9s"><img src="/assets/img/photo.png"></a>
+        <a href="https://www.youtube.com/watch?v=29gSYy7niPI&t=9s"><img src="/assets/img/play.png"></a>
     </div>
 {% endblock %}

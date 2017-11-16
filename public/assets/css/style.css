@@ -1,13 +1,45 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+#main{
+    min-height: 100vh;
+}
 /** Header */
-
+header{
+    box-shadow: 5px 5px 5px #AAA;
+}
+.bold{
+    font-weight: bold;
+    background-color: #CCC;
+    border-radius: 10px;
+    padding: 5px;
+}
 header .top-bar input {
     max-width: 120px;
 }
-.menu > li:first-child{
+input .input-group-field{
+    width: 50%;
+}
+#responsive-menu, header .menu, .top-bar ul{
+    background-color: #FFF;
+}
+.menu a{
+    color: #555;
+}
+header .menu > li:first-child{
     font-size:1.2em;
     font-weight: bold;
 }
-
+.menu .button{
+    background-color: #BBB;
+    color: #FFF;
+}
+.mini-field{
+    max-width: 30px;
+}
+.input-group-field{
+    align-content: center;
+}
 header .callout p {
     text-align: center;
 }
@@ -17,16 +49,21 @@ header .callout button {
     color: black;
     font-weight: bold;
 }
-
+.callout.alert{
+    background-color: #FF9436;
+}
 #userName {
     margin : 8px;
   }
+
+.menu li{
+    margin-left: 5px;
+}
 
 /** Footer*/
 footer {
     margin-left: 0;
     margin-right:0;
-    margin-top: 60px;
     background-color: darkgrey;
 }
 
@@ -39,11 +76,18 @@ footer > div > ul > li > a {
 h1, h2 {
     text-align: center;
     padding: 30px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    font-family: 'Finger Paint', cursive;
+    font-size: 3.5em;
 }
 
-#titleBanner  {
-    background-color: #1d81ff;
-    color: whitesmoke;
+#banner{
+    background-image: url('/assets/img/background.jpg');
+    background-size: 100%;
+    height: 450px;
+    color: #FFF;
+    opacity: .8;
 }
 
 #homeProjectButton {
@@ -66,6 +110,7 @@ h1, h2 {
 a {
     padding: 3px;
     margin: 5px;
+    color: #444;
 }
 
 /* show project */
@@ -78,12 +123,11 @@ form .form-icons h4 {
 }
 
 form .form-icons .input-group-label {
-    background-color: #1779ba;
-    border-color: #1779ba;
+    background-color: #1779BA;
+    border-color: #1779BA;
 }
-
 form .form-icons .input-group-field {
-    border-color: #1779ba;
+    border-color: #1779BA;
 }
 
 form .form-icons .fa {
@@ -91,10 +135,18 @@ form .form-icons .fa {
     width: 1rem;
 }
 
+.columns:hover{
+    background-color: #DDD;
+}
 /** */
 h3{
+    font-family: 'Lato', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
+    color: #555;
+}
+form h3, .holderSpaceTitle{
+    margin: 30px;
 }
 .grid-container{
     margin-top: 2%;
@@ -122,7 +174,67 @@ h3{
     border: 1px solid #000000;
 
 }
+#amountRequest .columns {
+    font-size: 12px;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #BBB;
 
+}
+#pagination {
+    text-align: center;
+}
+
+/** forms */
+#deposit{
+    margin: 15px;
+    color: #444;
+}
+[type="text"]{
+    width: 50%;
+}
+[type="tel"], [type="number"], [type="date"]{
+    width: 25%;
+}
+h5{
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+}
+.button{
+    border-radius: 5px;
+}
+.callout.success, .button.success{
+    background-color: #A1D490;
+}
+.button:hover{
+    box-shadow: 2px 2px 2px #444;
+}
+.button.success:hover{
+    background-color: #A1D490;
+}
+
+#deposit-button{
+    text-align: center;
+    margin-top: 40px;
+}
+#deposit > p{
+    margin: 30px;
+}
+#tutos{
+    text-align: center;
+    margin-top: 40px;
+}
+#tutos img{
+    height: 60px;
+}
+#tutos img:hover{
+    position: relative;
+    bottom: 20px;
+}
+#tutos a{
+    margin: 30px;
+}
 
 /** span */
 .custom-2 {
@@ -159,11 +271,7 @@ h3{
 .custom-2 span:after {
     left: 100%;
 }
-
-
-
 /** end span */
-
 
 #deposit-button{
     text-align: center;
@@ -221,3 +329,4 @@ h3{
     padding-top: 20px;
 }
 /* sidebar */
+

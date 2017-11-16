@@ -10,36 +10,35 @@
 {% block content %}
     <form method="post" action="/depot/form4" enctype="multipart/form-data">
         <div class="grid-container">
+            <h3>Votre projet en détails</h3>
             <div class="medium-6 cell">
                 <label>Un projet, une aventure !
                     <input type="text" name="description1" placeholder="500 mots maximum">
                 </label>
             </div>
             <div class="medium-6 cell">
-                <label>Comment la collecte va aider à la création / la sauvegarde d'emplois ?<br>
-                    Grâce à votre soutien, ...
-
+                <label>A quels besoins sociétaux va répondre votre projet ?
                     <input type="text" name="description2" placeholder="500 mots maximum">
                 </label>
             </div>
             <div class="medium-6 cell">
-                <label>Par conséquent...
+                <label>Comment la collecte va aider à la création d'emplois ?
                     <input type="text" name="description3" placeholder="500 mots maximum">
                 </label>
             </div>
             <div class="medium-6 cell">
-                <label>A propos du porteur de projet ?
+                <label>Décrivez en quelques mots le ou les porteurs de projet :
                     <input type="text" name="description4" placeholder="500 mots maximum">
                 </label>
             </div>
             <div class="medium-6 cell">
-                <label>Sponsors :
+                <label>Vos financeurs (collectivités territoriales, fondations, mécènes...) :
                     <input type="text" name="sponsors" placeholder="500 mots maximum">
                 </label>
             </div>
             <div class="medium-6 cell">
                 <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                <label for="upload" class="button">Charger les images (3 max)</label>
+                <label for="upload" class="button">Charger des images (3 max)</label>
                 <input type="file" id="upload" class="show-for-sr" name="upload[]" multiple="multiple">
             </div>
             <input type="submit" class="button success" value="je valide cette étape">
