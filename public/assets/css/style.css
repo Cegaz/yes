@@ -140,6 +140,9 @@ form .form-icons .fa {
     background-color: #DDD;
 }
 /** */
+
+
+
 h3{
     font-family: 'Lato', sans-serif;
     font-size: 1.5em;
@@ -162,8 +165,9 @@ form h3, .holderSpaceTitle{
     margin: 1%;
     border: 1px solid #BBB;
 }
-#threeProjects .thumbnail{
-    margin-top: 3%;
+.thumbnail{
+   margin-left: -3%;
+   margin-top: 3%;
 }
 
 
