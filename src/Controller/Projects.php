@@ -30,4 +30,6 @@ class Projects extends AbstractController
 
         return $this->_twig->render('home.html.twig', ['projects' => $projects, 'tags' => $results]);
     }
+
+
 }
