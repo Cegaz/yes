@@ -44,12 +44,19 @@
                         <input type="password" placeholder="Mot de passe" name="password">
                     </li>
 
-                    <li>
-                        <button type="button" id="button" class="button">Connexion</button>
-                    </li>
-                    <li>
-                        <button type="button" data-open="openModal" class="button">Inscription</button>
-                    </li>
+                        {% if sess.idUser is defined %}
+                            <li>
+                                <input name="logout" type="button" class="button" value="Déconnexion" onclick="document.location.href='/logout'">
+                            </li>
+                        {% else %}
+                            <li>
+                                <button type="button" id="button" class="button">Connexion</button>
+                            </li>
+                            <li>
+                                <button type="button" data-open="openModal" class="button">Inscription</button>
+                            </li>
+                        {% endif %}
+
                 </ul>
             </form>
             <div class="reveal" id="openModal" data-reveal>
