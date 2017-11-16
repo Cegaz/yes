@@ -24,6 +24,7 @@ class ProjectHolderSpace extends AbstractController
                 $unauthorized = "Vous n'avez pas déposé de projet sur notre service";
             } else {
                 $_SESSION = $datas;
+                $_SESSION->idUser = $datas->id_user;
 
                 $projectManager = new ProjectsManager($db);
                 $projectPreparation = $projectManager->getProjectsAbstracts($_SESSION->id, 'en rédaction');
