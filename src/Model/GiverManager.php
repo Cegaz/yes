@@ -65,9 +65,10 @@ class GiverManager
         right JOIN financement f
         ON f.id_project = p.id
         WHERE f.id_user = '.$_SESSION['idUser'].'
-        LIMIT 0, 3');
+        ');
 
         $amounts = [];
+
 
 
 
@@ -82,7 +83,6 @@ class GiverManager
                     'title' => $data['title']
                     ];
         }
-
         return $amounts;
     }
 }
