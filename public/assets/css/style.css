@@ -219,8 +219,8 @@ form h3, .holderSpaceTitle{
 }
 
 /** forms */
-#deposit{
-    margin: 15px;
+.paragraph {
+    margin: 30px;
     color: #444;
 }
 [type="text"]{
@@ -246,9 +246,9 @@ h5{
     background-color: #A1D490;
 }
 
-#deposit-button{
+.deposit-button{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 #deposit > p{
     margin: 30px;
@@ -304,11 +304,6 @@ h5{
     left: 100%;
 }
 /** end span */
-
-#deposit-button{
-    text-align: center;
-    margin-top: 100px;
-}
 
 /** section Oneproject */
 #oneProject {

@@ -1,18 +1,19 @@
-{#% extends 'oneProject.html.twig' %#}
-{% extends 'form1.html.twig' %}
-
-{% block banner %}
-{% endblock %}
-
+{%  extends 'form1.html.twig' %}
 
 {% block content %}
-    <h3>Récapitulatif de votre projet :</h3>
-    <div class="grid-container">
-        <div class="medium-6 cell">
+    <div class="paragraph">
+        <p>Félicitations, vous vous apprêtez à déposer votre projet !</p>
+        <p>Si vous n'avez pas terminé, ou souhaitez y revenir plus tard, cliquez sur 'J'enregistre
+            et je complèterai + tard'.<br>
+        Sinon, vous pouvez demander la publication en cliquant sur 'je publie', nous la validerons dans les meilleurs délais.</p>
+        <p>Pour toute question, vous pouvez nous contacter : <a href="mailto:wcs.projetoui@gmail.com">
+                wcs.projetoui@gmail.com</a></p>
+    </div>
+
+    <div class="grid-container deposit-button">
+        <div class="medium-6 cell text-center">
             <a href="/espace-porteur" class="button">j'enregistre et je complèterai + tard</a>
             <a href="/depot/publication" class="success button">je publie</a>
         </div>
     </div>
-
-    {{ parent }}
 {% endblock %}
