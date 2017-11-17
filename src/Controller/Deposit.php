@@ -8,6 +8,7 @@
 
 namespace Controller;
 use Model\DepositManager;
+use Model\showOneProjectManager;
 
 
 class Deposit extends AbstractController
@@ -116,9 +117,9 @@ class Deposit extends AbstractController
 
         $manager->updateStep(4);
 
-        return $this->_twig->render('summary.html.twig',
-            ['message' => 'Vos données ont bien été sauvegardées.']);
-
+        $manager2 = new showOneProjectManager($db, $_SESSION['idProject']);
+        $project = $manager2->showOne();
+        return $this->_twig->render('summary.html.twig', ['project' => $project]);
     }
 
     public function upload_image($file, $pageIfError)

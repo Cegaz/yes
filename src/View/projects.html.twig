@@ -35,19 +35,19 @@
                 {% if i == 1 and numPage == 1 %}
                     <li class="pagination-previous disabled">Précédente</li>
                 {% elseif i == 1 %}
-                    <li class="pagination-previous"><a href="/{{ i }}" aria-label="Previous page">Précédente</a></li>
+                    <li class="pagination-previous"><a href="/{{ numPage -1 }}#tagListRequest" aria-label="Previous page">Précédente</a></li>
                 {% endif %}
 
                 {% if i == numPage %}
                     <li class="current"><span class="show-for-sr">You're on page</span>{{ numPage }}</li>
                 {% else %}
-                    <li><a href="/{{ i }}" aria-label="Page {{ i }}">{{ i }}</a></li>
+                    <li><a href="/{{ i }}" aria-label="Page {{ i }}#tagListRequest">{{ i }}</a></li>
                 {% endif %}
 
                 {% if i == nbPages and numPage == nbPages%}
                     <li class="pagination-previous disabled">Suivante</li>
                 {% elseif i == nbPages %}
-                    <li class="pagination-next"><a href="/{{ i }}" aria-label="Next page">Suivante</a></li>
+                    <li class="pagination-next"><a href="/{{ numPage + 1 }}#tagListRequest" aria-label="Next page">Suivante</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

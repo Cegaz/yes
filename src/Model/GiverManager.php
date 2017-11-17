@@ -32,7 +32,7 @@ class GiverManager
         ON f.id_project = p.id
         GROUP BY f.id_project
         ORDER BY p.dead_line DESC
-        LIMIT 4
+        LIMIT 3
         ');
 
         $projects = [];
@@ -65,9 +65,10 @@ class GiverManager
         right JOIN financement f
         ON f.id_project = p.id
         WHERE f.id_user = '.$_SESSION['idUser'].'
-        LIMIT 0, 3');
+        ');
 
         $amounts = [];
+
 
 
 
@@ -82,7 +83,6 @@ class GiverManager
                     'title' => $data['title']
                     ];
         }
-
         return $amounts;
     }
 }

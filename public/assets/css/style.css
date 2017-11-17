@@ -75,6 +75,9 @@ footer > div > ul > li > a {
 h2, h3, h4, h5, p {
     font-family: 'Raleway', sans-serif;
 }
+h2{
+    margin-bottom: 30px;
+}
 /** banner */
 
 #banner h1, #banner h2 {
@@ -151,6 +154,15 @@ form .form-icons .fa {
     height: 200px;
     width: 400px;
 }
+.abstract{
+    position: relative;
+    height: 650px;
+}
+.blockDown{
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+}
 /** */
 
 
@@ -168,7 +180,7 @@ form h3, .holderSpaceTitle{
     margin-top: 2%;
 }
 .projectHolder{
-    border-radius: 5px;
+    border-radius: 50px;
     width: 50px;
     height: 50px;
 }
@@ -192,6 +204,13 @@ form h3, .holderSpaceTitle{
     margin: 1%;
     border: 1px solid #BBB;
 }
+
+#allProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns, #validationWaiting .columns  {
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #BBB;
+}
+
 .thumbnail{
    margin-left: -3%;
    margin-top: 3%;
@@ -214,13 +233,14 @@ form h3, .holderSpaceTitle{
     border: 1px solid #BBB;
 
 }
-#pagination {
+.pagination {
     text-align: center;
+    margin-top: 30px;
 }
 
 /** forms */
-#deposit{
-    margin: 15px;
+.paragraph {
+    margin: 30px;
     color: #444;
 }
 [type="text"]{
@@ -231,7 +251,10 @@ form h3, .holderSpaceTitle{
 }
 h5{
     font-family: 'Lato', sans-serif;
-    font-size: 1em;
+    font-size: 1rem;
+}
+i{
+    font-size: 1.5em;
 }
 .button{
     border-radius: 5px;
@@ -246,9 +269,9 @@ h5{
     background-color: #A1D490;
 }
 
-#deposit-button{
+.deposit-button{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 #deposit > p{
     margin: 30px;
@@ -305,11 +328,6 @@ h5{
 }
 /** end span */
 
-#deposit-button{
-    text-align: center;
-    margin-top: 100px;
-}
-
 /** section Oneproject */
 #oneProject {
     margin-top: 3%;
@@ -358,10 +376,6 @@ border: 1px solid darkgrey;
 
 }
 
-
-
-
-
 #oneProject h2 {
     text-align: center;
     padding: 30px;
@@ -375,16 +389,19 @@ border: 1px solid darkgrey;
 /* sidebar */
 #oneProject aside{
     position:fixed;
-    background-color: black;
-    opacity : 0.7;
+    background-color: #4B4B4B;
+   /* opacity : 0.7; */
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     top:0;
-    right:10%;
+    right:7.3%;
     z-index:20;
     margin-top: 250px;
     margin-left: 0px;
     text-align: center;
+}
+#oneProject .heart {
+    width: 80px;
 }
 
 #oneProject aside li{
@@ -435,7 +452,7 @@ section> div > div  {
 
 .holderSpaceTitle ~ .grid-container {
     background-image: url("/assets/img/seigaiha.png");
-    padding: 5%;
+     padding: 5%;
     margin-top: 0px;
     box-shadow: 1px 1px 5px #555555;
 }

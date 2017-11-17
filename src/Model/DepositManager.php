@@ -76,7 +76,6 @@ class DepositManager
     {
         $launchDate = strtotime($launchDate);
         $launchDate = date('Y-m-d', $launchDate);
-
         $deadLine = strtotime($deadLine);
         $deadLine = date('Y-m-d', $deadLine);
 
