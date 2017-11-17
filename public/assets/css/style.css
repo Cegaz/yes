@@ -204,6 +204,13 @@ form h3, .holderSpaceTitle{
     margin: 1%;
     border: 1px solid #BBB;
 }
+
+#allProjects .columns, #projectPreparation .columns, #published .columns, #financing .columns, #closed .columns, #validationWaiting .columns  {
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #BBB;
+}
+
 .thumbnail{
    margin-left: -3%;
    margin-top: 3%;
