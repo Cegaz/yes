@@ -10,21 +10,21 @@
             <h2 class="type-sidelines custom-2"><span>mes contributions</span></h2>
             <div class="grid-x grid-margin-x">
             {% for amount in amounts %}
-                <div class="small-12 medium-6 columns" id="titleProject">
-                    <h5>ma contribution de {{ amount['amount'] }} euro</h5>
+                <div class="small-12 medium-6 columns" class="abstract">
+                    <h2>{{ amount['title'] }}</h2>
+                    <h3>ma contribution de {{ amount['amount'] }} euros</h3>
                     <h5>le  {{ amount['date']|date("d-m-Y") }}</h5>
-                    <h5>sur le projet : {{ amount['title'] }}</h5>
                     <h5>{{ amount['short_description'] }}</h5>
-                    <img class="projectHolder" id="amountImg" src="{{ amount['little_picture'] }}">
+                    <img class="thumbnail" id="projectImg" src="{{ amount['little_picture'] }}">
                 </div>
             {% endfor %}
             </div>
 
         </section>
-
+{#
 <section id="threeProjects" class="grid-container">
     <div class="grid-x grid-margin-x">
-        {% for project in projects %}
+        {% for amount in amounts %}
             <div class="small-12 medium-4 columns" class="abstract">
 
                 <a href="/projets/{{ project.id }}/{{ project.titleReplace }}">
@@ -51,7 +51,7 @@
         {% endfor %}
     </div>
 </section>
-
+#}
         <section id="threeProjects" class="grid-container">
             <h2 class="type-sidelines custom-2"><span> plus de projets </span></h2>
             <div class="grid-x grid-margin-x">
@@ -82,8 +82,7 @@
                     <h2 class="type-sidelines custom-2"><span>mes derniers commentaires</span></h2>
             <div class="grid-x grid-margin-x">
                 {% for comment in comments %}
-                    <div class="small-6 medium-2 columns">
-                        <h5>projet :{{ comment['id_project'] }}</h5>
+                    <div class="small-12 medium-6 columns">
                         <i>" {{ comment['comment'] }} "</i>
                     </div>
                 {% endfor %}

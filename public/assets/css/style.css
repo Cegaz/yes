@@ -75,6 +75,9 @@ footer > div > ul > li > a {
 h2, h3, h4, h5, p {
     font-family: 'Raleway', sans-serif;
 }
+h2{
+    margin-bottom: 30px;
+}
 /** banner */
 
 #banner h1, #banner h2 {
@@ -231,7 +234,10 @@ form h3, .holderSpaceTitle{
 }
 h5{
     font-family: 'Lato', sans-serif;
-    font-size: 1em;
+    font-size: 1rem;
+}
+i{
+    font-size: 1.5em;
 }
 .button{
     border-radius: 5px;
