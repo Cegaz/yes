@@ -32,7 +32,7 @@ class GiverManager
         ON f.id_project = p.id
         GROUP BY f.id_project
         ORDER BY p.dead_line DESC
-        LIMIT 4
+        LIMIT 3
         ');
 
         $projects = [];
