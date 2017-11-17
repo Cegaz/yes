@@ -8,7 +8,7 @@
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', 'Home/index');
+    $r->addRoute('GET', '/', 'Projects/index');
     $r->addRoute('POST', '/login', 'LogIn/logIn');
     $r->addRoute('GET', '/logout', 'LogIn/logOut');
     $r->addRoute('GET', '/session', 'LogIn/session');
@@ -23,8 +23,10 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute(['POST', 'GET'], '/depot/form3', 'Deposit/form3');
     $r->addRoute(['POST', 'GET'], '/depot/form4', 'Deposit/form4');
     $r->addRoute(['POST', 'GET'], '/depot/form5', 'Deposit/form5');
-    $r->addRoute('GET', '/depot/publication', 'Deposit/publish');
-
+    $r->addRoute(['POST','GET'], '/projets/{id}/{titleReplace}', 'showOneProject/index');
+    $r->addRoute(['POST', 'GET'], '/depot/recap', 'Deposit/summary');
+    $r->addRoute(['POST', 'GET'], '/depot/publication', 'Deposit/publish');
+    $r->addRoute('GET', '/{page:\d+}', 'Projects/index');
 });
 
 // Fetch method and URI from somewhere

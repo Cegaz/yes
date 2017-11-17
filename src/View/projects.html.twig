@@ -1,25 +1,55 @@
-{% extends 'layout.html.twig' %}
 {% block content %}
     <section id="tagListRequest" class="grid-container">
-    <div class="grid-x grid-margin-x">
-        {% for tag in tags %}
-            {% for value in tag %}
-                <a href="/tag/{{ value }}" alt="{{ value }}" type="button">{{ value }}</a>
+        <div class="grid-x grid-margin-x">
+            <a
+                    {% if tag is null %}
+                        class="bold"
+                    {% endif %}
+                    href="/projets#tagListRequest" alt="projets">tous les projets</a>
+            {% for taggy in tags %}
+                {% for value in taggy %}
+                    <a {% if value == tag %}
+                        class="bold"
+                    {% endif %}
+                            href="/tag/{{ value }}#tagListRequest" alt="{{ value }}">{{ value }}</a>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-        <div>
-            {% block sortByTag %}
+            <div>
+                {% block sortByTag %}
 
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
-    </div>
     </section>
+
     <section id="threeProjects" class="grid-container">
         <div class="grid-x grid-margin-x">
-
-    {% for project in projects %}
-            {% include 'projectAbstract.html.twig' %}
-    {% endfor %}
+            {% for project in projects %}
+                {% include 'projectAbstract.html.twig' %}
+            {% endfor %}
         </div>
+
+
+        <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+            {% for i in 1..nbPages %}
+                {% if i == 1 and numPage == 1 %}
+                    <li class="pagination-previous disabled">Précédente</li>
+                {% elseif i == 1 %}
+                    <li class="pagination-previous"><a href="/{{ i }}" aria-label="Previous page">Précédente</a></li>
+                {% endif %}
+
+                {% if i == numPage %}
+                    <li class="current"><span class="show-for-sr">You're on page</span>{{ numPage }}</li>
+                {% else %}
+                    <li><a href="/{{ i }}" aria-label="Page {{ i }}">{{ i }}</a></li>
+                {% endif %}
+
+                {% if i == nbPages and numPage == nbPages%}
+                    <li class="pagination-previous disabled">Suivante</li>
+                {% elseif i == nbPages %}
+                    <li class="pagination-next"><a href="/{{ i }}" aria-label="Next page">Suivante</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
     </section>
 {% endblock %}

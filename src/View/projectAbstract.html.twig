@@ -1,16 +1,21 @@
-<div class="small-12 medium-4 columns">
-    <img class="thumbnail" src="{{ project.little_picture }}" alt="project">
-    <div>
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.short_description }}</p>
-        <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
-             aria-valuetext="{{ project.percent }} %" aria-valuemax="100">
+<div class="small-12 medium-4 columns" class="abstract">
+    <a href="/projets/{{ project.id }}/{{ project.titleReplace }}">
+
+        <img class="thumbnail" id="projectImg" src="{{ project.little_picture }}" alt="project">
+
+        <div>
+            <h3>{{ project.title }} </h3>
+            <p>{{ project.short_description }}</p>
+            <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
+                 aria-valuetext="{{ project.percent }} %" aria-valuemax="100">
                     <span class="progress-meter" style="width: {{ project.percent }}%;">
                     <p class="progress-meter-text">{{ project.percent }}%</p></span>
-        </div>
-        <p class="text-right">{{ project.collected }}€ / {{ project.amount }}€</br>
-            {{ project.time_left }} j restants</p>
-        <p>par {{ project.first_name }} {{ project.name }} <img class="projectHolder"
-                                                                src="{{ project.avatar }}"></p>
-    </div>
+            </div>
+
+            <p class="text-right">{{ project.collected }}€ / {{ project.amount }}€</br>
+                {{ project.time_left }} j restants</p>
+
+            <p class="text-right">par {{ project.first_name }} {{ project.name }} <img class="projectHolder"
+                                                                                       src="{{ project.avatar }}"></p>
+        </div></a>
 </div>

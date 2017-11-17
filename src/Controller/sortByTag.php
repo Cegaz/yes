@@ -19,10 +19,13 @@ class sortByTag extends AbstractController
         require_once '../app/connect.php';
         $manager = new sortByTagManager($db, $tag);
         $projects = $manager->sortByTagRequest();
+        $numPages = 1;
+        $nbPages = 1;
         $tags = new TagsManager($db);
         $results = $tags->listTags();
 
-        return $this->_twig->render('tag.html.twig', ['tag' => $tag, 'projects' => $projects, 'tags' => $results]);
+        return $this->_twig->render('home.html.twig',
+            ['numPage' => $numPages, 'nbPages' => $nbPages, 'tag' => $tag, 'projects' => $projects, 'tags' => $results]);
     }
 
 }

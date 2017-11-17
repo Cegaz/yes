@@ -3,20 +3,12 @@
 {% block banner %}
 
     <section id="banner">
-    <div id="titleBanner">
-        <h1>1 projet = 1 emploi <small>(ou plus)</small></h1>
-    </div>
-
-    <div>
-        <h2>Soutenir un projet, c'est créer de l'emploi! <small>et obtenir une contrepartie...</small></h2>
-    </div>
+        <h1>1 projet = 1 emploi</h1>
+        <h2>Soutenir un projet, c'est créer de l'emploi!</h2>
     </section>
+<div id="test"></div>
 {% endblock %}
 
 {% block content %}
-    <section id="homeProjectButton" class="">
-        <a class="button large" href="/projets">Les projets de nos start-up et auto-entrepreneurs</a>
-        <a class="button large" href="/projets">Les projets a vocation sociale et solidaire</a>
-    </section>
-
+    {% include 'projects.html.twig' %}
 {% endblock %}

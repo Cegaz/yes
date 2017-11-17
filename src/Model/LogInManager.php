@@ -15,7 +15,8 @@ class LogInManager
 
     public function checkUser($user, $password)
     {
-        if (!empty($_POST['name'] || $_POST['password'])) {
+
+        if (!empty($_POST['pseudo'] || $_POST['password'])) {
             $queryUser = "SELECT *
                   FROM user 
                   WHERE pseudo =:user
@@ -32,19 +33,14 @@ class LogInManager
                 $_SESSION['pseudo'] = $user;
                 $_SESSION['idUser'] = $fetch['id'];
 
-
-                if (!empty($fetch)) {
-                    $_SESSION['pseudo'] = $user;
-                    $_SESSION['idUser'] = $fetch['id'];
-
-                } else {
-                    return "Identifiants invalides";
-                }
             } else {
-                return "veuillez remplir tous les champs";
+                $_SESSION['error'] = "Identifiants invalides";
+
             }
+        } else {
+            $_SESSION['error'] = "veuillez remplir tous les champs";
+
         }
-
-
     }
+
 }

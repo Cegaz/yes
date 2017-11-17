@@ -1,0 +1,120 @@
+{% extends 'layout.html.twig' %}
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+<section id="oneProject">
+
+        <div class="grid-container fluid">
+            <div class="grid-x">
+                <div class="small-12 medium-12 cell">  <h2>{{ project.title }} </h2></div>
+            </div>
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-3 cell">
+                    <p>{{ project.collected }}€ / {{ project.amount }}€</p>
+                    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0"
+                         aria-valuetext="{{ project.percent }} %" aria-valuemax="100">
+                    <span class="progress-meter" style="width: {{ project.percent }}%;">
+                    <p class="progress-meter-text">{{ project.percent }}%</p></span>
+                    </div>
+                </div>
+                <div class="small-12 medium-3 cell">
+                    <p>Donacoeurs</p>
+                    <img src="/assets/img/heart2.png">
+                    <p class="cible">10</p>
+                </div>
+                <div class="small-12 medium-3 cell">
+                    <p>Temps restant</p>
+                    <img src="/assets/img/agenda.png">
+                    <p class="cible">J-  {{ project.time_left }}</p>
+                </div>
+                <div class="small-12 medium-1 cell"></div>
+            </div>
+
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-6 cell"><img src="{{ project.picture1 }}" alt="{{ project.titleReplace }}" class="thumbnail resize"></div>
+                <div class="small-12 medium-3 cell left">
+                    <p>  <img src="/assets/img/marker.jpg" alt="position"> Bordeaux</p>
+                    <p>  <img src="/assets/img/contact.jpg" alt="contact"> Les contacter</p>
+                    <p>  <img src="/assets/img/partager.png" alt="partage"> Partager</p>
+                </div>
+                <div class="small-12 medium-1 cell"></div>
+
+            </div>
+
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-9 cell">
+                    <p class="left"><b>Un projet, une aventure !</b> Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium. <br> Bloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.<br> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    <p class="cadre">Comment la collecte va aider à la création/la sauvegarde d'emploi(s) ?</p>
+                    <p class="left"><b>Grâce à votre soutien, </b>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                </div>
+                <div class="small-12 medium-1 cell"></div>
+            </div>
+
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-4 cell left">
+                    <p class="left"> Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium. <br> Bloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis <br> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores. Duis aute irure !  </p>
+                </div>
+                <div class="small-12 medium-5 cell"><img src="{{ project.picture2 }}" alt="{{ project.titleReplace }}" class="thumbnail resize"></div>
+
+                <div class="small-12 medium-2 cell"></div>
+            </div>
+
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-4 cell left">
+                    <img src="{{ project.picture3 }}" alt="{{ project.titleReplace }}" class="thumbnail resize">
+
+                </div>
+                <div class="small-12 medium-5 cell">
+                    <p class="left"> Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium. <br> Bloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis <br> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores. Duis aute irure !  </p>
+
+                </div>
+
+                <div class="small-12 medium-1 cell"></div>
+            </div>
+
+            <div class="grid-x">
+                <div class="small-12 medium-1 cell"></div>
+                <div class="small-12 medium-9 cell">Projet porté par  {{ project.first_name }} {{ project.name }} <img class="projectHolder" src="{{ project.avatar }}"></div>
+                <div class="small-12 medium-1 cell"></div>
+
+            </div>
+
+        </div>
+
+        <aside>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="" target="_blank">
+                            <img src="/assets/img/facebookmini.png" alt="Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <img src="/assets/img/twitter.png" alt="Twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank">
+                            <img src="/assets/img/linkedin.png" alt="Linkedin">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <img src="/assets/img/top.png" alt="Topmenu">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+</section>
+{% endblock %}

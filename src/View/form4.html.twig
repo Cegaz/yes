@@ -8,10 +8,26 @@
 {% endblock %}
 
 {% block content %}
-    <div class="grid-container">
-        <div class="medium-6 cell">
-            <a href="/espace-porteur" class="button">j'enregistre et je complèterai + tard</a>
-            <a href="/depot/publication" class="success button">je publie</a>
+    <form method="post" action="/depot/recap">
+        <div class="grid-container">
+            <div class="medium-6 cell">
+                <label>Montant demandé
+                    <input type="number" min=0 step=100 name="amount">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Date de lancement de la collecte
+                    <input type="date" name="launchDate">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Date de fin de la collecte
+                    <input type="date" name="deadLine">
+                </label>
+            </div>
+
+            <input type="submit" class="button success" value="je valide cette étape">
         </div>
-    </div>
+    </form>
+
 {% endblock %}
