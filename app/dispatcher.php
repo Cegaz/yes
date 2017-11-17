@@ -6,6 +6,9 @@
  * Time: 17:20
  */
 
+ini_set('display_errors','off');
+
+
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'Projects/index');
