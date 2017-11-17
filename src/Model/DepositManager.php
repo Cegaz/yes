@@ -74,7 +74,9 @@ class DepositManager
 
     public function updateDeposit2($amount, $launchDate, $deadLine)
     {
+        $launchDate = strtotime($launchDate);
         $launchDate = date('Y-m-d', $launchDate);
+        $deadLine = strtotime($deadLine);
         $deadLine = date('Y-m-d', $deadLine);
 
         $prep = $this->db->prepare(
